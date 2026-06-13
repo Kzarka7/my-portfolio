@@ -12,6 +12,25 @@ import Availabity from "../../components/Availability";
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  const footerHeader = {
+    fontFamily: "var(--font-barl)",
+    fontSize: "12px",
+    color: "var(--muted)",
+    letterSpacing: "0.18em",
+    textTransform: "uppercase",
+    marginBottom: "16px",
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+  };
+
+  const footerLine = {
+    flex: 1,
+    height: "0.5px",
+    background: "var(--border-3D)",
+    display: "block",
+  };
+
   return (
     <footer
       style={{
@@ -48,31 +67,16 @@ export default function Footer() {
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.08 }}
           >
-            <div
-              style={{
-                fontFamily: "var(--font-barl)",
-                fontSize: "12px",
-                color: "var(--muted)",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                marginBottom: "16px",
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-              }}
-            >
+            <div style={footerHeader}>
               Contact Info
-              <span
-                style={{
-                  flex: 1,
-                  height: "0.5px",
-                  background: "var(--border-3D)",
-                  display: "block",
-                }}
-              />
+              <span style={footerLine} />
             </div>
             <div
-              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+              }}
             >
               {contactInfo.map((item, i) => (
                 <FooterContact key={i} item={item} />
@@ -87,35 +91,15 @@ export default function Footer() {
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.16 }}
           >
-            <div
-              style={{
-                fontFamily: "var(--font-barl)",
-                fontSize: "12px",
-                color: "var(--muted)",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                marginBottom: "16px",
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-              }}
-            >
+            <div style={footerHeader}>
               Find me on
-              <span
-                style={{
-                  flex: 1,
-                  height: "0.5px",
-                  background: "var(--border-3D)",
-                  display: "block",
-                }}
-              />
+              <span style={footerLine} />
             </div>
 
             <div
               style={{
                 display: "flex",
                 gap: "20px",
-                alignItems: "center",
                 marginBottom: "24px",
               }}
             >
