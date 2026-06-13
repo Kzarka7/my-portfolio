@@ -95,7 +95,7 @@ export default function Button({
         color: hov ? "var(--text)" : "var(--text-dark)",
         border: "2px solid var(--primary-E2)",
         transform: hov ? "scale(1.05)" : "scale(1)",
-        boxShadow: hov ? "4px 5px 17px -4px var(--primary-59)" : "none",
+        boxShadow: hov ? "4px 5px 16px 2px var(--primary-59)" : "none",
       },
     },
     ghost: {
@@ -109,6 +109,7 @@ export default function Button({
         color: hov ? "var(--text-dark)" : "var(--primary-E2)",
         border: "2px solid var(--primary-E2)",
         transform: hov ? "scale(1.05)" : "scale(1)",
+        boxShadow: hov ? "4px 5px 16px 2px var(--primary-59)" : "none",
       },
     },
     "pill-resume": {
@@ -137,9 +138,7 @@ export default function Button({
         background: sent ? "var(--surface-0D)" : "var(--primary-E2)",
         color: sent ? "var(--primary-E2)" : "var(--text-dark)",
         border: sent ? "0.5px solid var(--primary-E2)" : "none",
-        boxShadow: sent
-          ? "none"
-          : "inset 0 0 1.2em -0.5em rgba(255,255,255,0.25)",
+        boxShadow: hov ? "0 0 16px 2px var(--primary-59)" : "none",
       },
     },
   };
@@ -160,7 +159,7 @@ export default function Button({
         height: "35px",
         width: hov ? "calc(100% - 5.5%)" : "35px",
         border: "1.5px solid var(--border-67)",
-        boxShadow: "0.1em 0.1em 0.6em 0.15em var(--primary-59)",
+        boxShadow: "0 0 8px 2px var(--primary-59)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -173,12 +172,10 @@ export default function Button({
         /* send pill: accent bg, turns dark on hover via CSS */
         position: "absolute",
         right: "7px",
-        background: sent ? "var(--primary-E2)" : "var(--text-dark)",
+        background: sent ? "var(--primary)" : "var(--text-dark)",
         height: "35px",
         width: hov ? "calc(100% - 7.5%)" : "35px",
-        boxShadow: sent
-          ? "0 0 10px var(--primary-59)"
-          : "0.1em 0.1em 0.6em 0.15em var(--primary-59)",
+        boxShadow: "0 0 8px 2px var(--primary-59)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
