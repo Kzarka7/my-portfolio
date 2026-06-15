@@ -13,6 +13,7 @@ export default function ContactCard() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
   const [focused, setFocused] = useState(null);
+  const [hov, setHov] = useState(false);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -67,6 +68,8 @@ export default function ContactCard() {
 
   return (
     <motion.div
+      onHoverStart={() => setHov(true)}
+      onHoverEnd={() => setHov(false)}
       initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
       /* whileHover: only transform + opacity — GPU composited */
@@ -74,12 +77,15 @@ export default function ContactCard() {
       viewport={{ once: false, amount: 0.1 }}
       transition={{ duration: 0.8, ease: EASE }}
       style={{
-        border: "0.5px solid var(--border-2E)",
+        border: hov
+          ? "0.5px solid var(--border-67)"
+          : "0.5px solid var(--border-2E)",
         background: "var(--surface)",
         padding: "40px",
         position: "relative",
         /* box-shadow on whileHover breaks compositor — use filter instead */
         willChange: "transform",
+        transition: "border 0.3s ease",
       }}
     >
       <CornerBrackets color="var(--primary)" size="14" strokeWidth="1.2" />
