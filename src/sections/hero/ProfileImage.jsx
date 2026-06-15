@@ -39,10 +39,9 @@ export default function ProfileImage() {
 
       {/* ── Image frame — GlareHover wraps the entire square ── */}
       <GlareHover
-        width="100%"
-        height="100%"
+        width="366px"
+        height="366px"
         background="var(--surface-05)"
-        borderRadius="0"
         borderColor="var(--primary-59)"
         glareColor="#4FC3F7"
         glareOpacity={0.12}

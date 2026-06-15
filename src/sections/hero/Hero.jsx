@@ -36,16 +36,19 @@ export default function Hero() {
     >
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 400px",
-          gap: "60px",
+          display: "flex",
           alignItems: "center",
+          justifyContent: "space-around",
+
           width: "100%",
           maxWidth: "1200px",
           margin: "0 auto",
         }}
       >
-        {/* LEFT */}
+        {/* LEFT IMAGE (restored, unchanged structure feel) */}
+        <ProfileImage />
+
+        {/* RIGHT */}
         <div>
           <motion.div
             {...fade(0)}
@@ -147,9 +150,6 @@ export default function Hero() {
             </Button>
           </motion.div>
         </div>
-
-        {/* RIGHT IMAGE (restored, unchanged structure feel) */}
-        <ProfileImage />
       </div>
     </section>
   );
