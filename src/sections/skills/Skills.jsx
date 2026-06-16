@@ -91,7 +91,7 @@ export default function Skills() {
                 }}
               >
                 {cat.items.map((skill, index) => (
-                  <SkillCard key={skill.card} skill={skill} index={index} />
+                  <SkillCard key={skill.name} skill={skill} index={index} />
                 ))}
               </div>
             </motion.div>

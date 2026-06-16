@@ -67,7 +67,7 @@ export default function SectionHeader({
 
       {/* Right Column Container: Renders and takes up space ONLY if description exists */}
       {description && (
-        <p
+        <div
           style={{
             fontFamily: "var(--font-body)",
             fontSize: "16px",
@@ -83,7 +83,7 @@ export default function SectionHeader({
           }}
         >
           {description}
-        </p>
+        </div>
       )}
     </motion.div>
   );
