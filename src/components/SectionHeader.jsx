@@ -14,14 +14,16 @@ export default function SectionHeader({
       viewport={{ once: false }}
       transition={{ duration: 0.7 }}
       style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "40px",
+        display: "flex", // ── Changed from grid to flex ──
+        justifyContent: "space-between", // Pushes the description to the right
         alignItems: "flex-end",
+        flexWrap: "wrap", // Protects your text layouts on mobile screens
+        gap: "40px",
         marginBottom: "40px",
       }}
     >
-      <div>
+      {/* Left Column Container */}
+      <div style={{ flex: "1 1 auto", minWidth: "250px" }}>
         <div
           style={{
             fontFamily: "var(--font-mono)",
@@ -63,18 +65,26 @@ export default function SectionHeader({
         </h2>
       </div>
 
-      <p
-        style={{
-          fontFamily: "var(--font-body)",
-          fontSize: "16px",
-          color: "var(--muted)",
-          lineHeight: 1.8,
-          fontWeight: 300,
-          textAlign: "end",
-        }}
-      >
-        {description}
-      </p>
+      {/* Right Column Container: Renders and takes up space ONLY if description exists */}
+      {description && (
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "16px",
+            color: "var(--muted)",
+            lineHeight: 1.8,
+            fontWeight: 300,
+            textAlign: "end",
+            flex: "1 1 400px", // Allows the text content block to scale correctly
+            maxWidth: "580px",
+            margin: 0,
+            display: "flex",
+            justifyContent: "end",
+          }}
+        >
+          {description}
+        </p>
+      )}
     </motion.div>
   );
 }

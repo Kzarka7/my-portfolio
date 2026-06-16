@@ -7,6 +7,9 @@ import SectionHeader from "../../components/SectionHeader";
 import ProjectCard from "./ProjectCard";
 import ArrowButton from "./ArrowButton";
 
+// ── 🎯 IMPORT YOUR NEW TELEMETRY NODE HERE ──
+import GithubHeaderTelemetry from "../../components/GithubHeaderTelemetry";
+
 export default function Projects() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -43,7 +46,14 @@ export default function Projects() {
           margin: "0 auto",
         }}
       >
-        <SectionHeader {...sectionHeader.projects} />
+        {/* ── 🛠️ TELEMETRY DROPPED INTO THE DESCRIPTION PROP ── */}
+        <SectionHeader 
+          number={sectionHeader.projects.number}
+          label={sectionHeader.projects.label}
+          title={sectionHeader.projects.title}
+          highlight={sectionHeader.projects.highlight}
+          description={<GithubHeaderTelemetry />} 
+        />
 
         {/* ── Controls ── */}
         <motion.div

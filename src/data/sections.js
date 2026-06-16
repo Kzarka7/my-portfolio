@@ -3,7 +3,7 @@ export const sectionHeader = {
     number: "01",
     label: "About",
     title: "JOHN",
-    highlight: "BENEDICT M. GALA"
+    highlight: "BENEDICT M. GALA",
   },
 
   skills: {
@@ -14,13 +14,11 @@ export const sectionHeader = {
     description:
       "Tools and technologies I work with daily. Each card shows the tech, a short description of how I use it, and a proficiency bar. Hover to reveal brand colors.",
   },
-  
+
   projects: {
     number: "03",
     label: "Work",
     title: "Projects",
-    description:
-      "A collection of applications and systems I've built to improve my frontend and full-stack development skills.",
   },
 
   education: {
