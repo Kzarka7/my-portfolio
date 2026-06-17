@@ -69,9 +69,9 @@ export default function MobileMenu({ scrolled, onClose }) {
               <a
                 href={href}
                 onClick={onClose}
-                className={`flex items-center justify-between p-[14px_16px] rounded-lg text-[13px] font-medium tracking-[0.12em] uppercase no-underline transition-all duration-200 select-none cursor-pointer hover:bg-[var(--surface-blue-05)] hover:text-[var(--primary)] ${
+                className={`flex items-center justify-between p-[14px_16px] rounded-lg text-[13px] font-medium tracking-[0.04em] uppercase no-underline transition-all duration-200 select-none cursor-pointer hover:bg-[var(--surface-blue-05)] hover:text-[var(--primary)] ${
                   isActive
-                    ? "text-[var(--primary)] bg-[var(--surface-0D)]"
+                    ? "text-[var(--primary)] bg-[var(--primary-1F)]"
                     : "text-[var(--text-gray)] bg-transparent"
                 }`}
                 style={{ fontFamily: "var(--font-mono)" }}
