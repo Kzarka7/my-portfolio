@@ -26,15 +26,15 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="about"
-      className="relative flex items-center min-h-screen mx-4 z-[1] mt-[120px] md:mt-0"
+      className="relative flex items-center min-h-screen mx-4 z-[1] mt-[120px] lg:mt-0"
     >
-      <div className="flex flex-col md:flex-row items-center justify-around w-full max-w-[1200px] mx-auto gap-[36px] md:gap-0">
+      <div className="flex flex-col lg:flex-row items-center justify-around w-full max-w-[1200px] mx-auto gap-[36px] lg:gap-0">
         
         {/* LEFT IMAGE */}
         <ProfileImage />
 
         {/* RIGHT CONTENT */}
-        <div className="text-center md:text-left">
+        <div className="text-center lg:text-left">
           <motion.div
             {...fade(0)}
             style={{ fontFamily: "var(--font-mono)" }}
@@ -46,7 +46,7 @@ export default function Hero() {
           <motion.div
             {...fade(0.1)}
             style={{ fontFamily: "var(--font-mono)" }}
-            className="text-[12px] text-[var(--primary-C2)] tracking-[0.16em] uppercase flex items-center justify-center md:justify-start gap-[10px] mb-4"
+            className="text-[12px] text-[var(--primary-C2)] tracking-[0.16em] uppercase flex items-center justify-center lg:justify-start gap-[10px] mb-4"
           >
             <span className="w-6 h-[0.5px] bg-[var(--primary)]" />
             {info.role}
