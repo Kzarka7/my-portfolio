@@ -42,7 +42,9 @@ export default function SectionHeader({
         <div
           style={{ fontFamily: "var(--font-body)" }}
           /* 🟢 FIXED: Changed alignment logic to sit center on mobile, text-right on desktops, with zero text stretching layout voids */
-          className="text-[16px] text-[var(--muted)] leading-[1.8] font-light flex-1 max-w-[580px] text-center md:text-right mt-2 md:mt-0"
+          className="text-[16px] text-[var(--muted)] text-center
+          leading-[1.8] font-light max-w-[580px] 
+          md:text-right mt-2 md:mt-0"
         >
           {description}
         </div>

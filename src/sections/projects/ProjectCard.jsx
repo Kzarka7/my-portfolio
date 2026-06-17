@@ -35,7 +35,7 @@ export default function ProjectCard({ project, direction }) {
       }}
       viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      style={{ position: "relative", willChange: "transform" }}
+      className="relative will-change-transform"
     >
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
@@ -51,38 +51,16 @@ export default function ProjectCard({ project, direction }) {
             border: hov
               ? "0.5px solid var(--border-67)"
               : "0.5px solid var(--border-2E)",
-            background: "var(--surface)",
-            position: "relative",
-            overflow: "hidden",
-            transition: "border 0.3s ease",
           }}
+          className="bg-[var(--surface)] relative overflow-hidden transition-colors duration-300 ease-in-out"
         >
           {/* Top accent line */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              height: "1px",
-              background: "var(--primary-C2)",
-              zIndex: 2,
-            }}
-          />
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-[var(--primary-C2)] z-10" />
 
           <CornerBrackets color="var(--primary)" size="14" strokeWidth="1.2" />
 
-          {/* ── Image — TiltedCard replaces flat scale hover ── */}
-          <div
-            style={{
-              width: "100%",
-              height: "400px",
-              position: "relative",
-              padding: "32px 36px",
-              /* overflow visible so tilt doesn't clip at card edge */
-              overflow: "hidden",
-            }}
-          >
+          {/* ── IMAGE SECTION — Fluid Responsive Heights ── */}
+          <div className="w-full h-[260px] sm:h-[340px] md:h-[400px] relative p-6 sm:p-8 overflow-hidden">
             <TiltedCard
               imageSrc={project.image}
               altText={project.title}
@@ -95,95 +73,44 @@ export default function ProjectCard({ project, direction }) {
               rotateAmplitude={8}
               showMobileWarning={false}
               showTooltip={true}
-              /* Override TiltedCard's rounded corners — keep Blueprint OS sharp edges */
               overlayContent={null}
               displayOverlayContent={false}
             />
 
-            {/* Status badge — above TiltedCard's z-index */}
+            {/* Status badge */}
             <div
-              style={{
-                position: "absolute",
-                top: "48px",
-                right: "52px",
-                fontFamily: "var(--font-mono)",
-                fontSize: "9px",
-                color: "var(--primary)",
-                border: "0.5px solid var(--border-67)",
-                background: "var(--surface-blue-05)",
-                padding: "5px 12px",
-                letterSpacing: "0.12em",
-                backdropFilter: "blur(6px)",
-                zIndex: 10,
-                pointerEvents: "none",
-              }}
+              style={{ backdropFilter: "blur(6px)" }}
+              className="absolute top-10 right-9 sm:top-12 sm:right-12 text-[9px] text-[var(--primary)] border-[0.5px] border-[var(--border-67)] bg-[var(--surface-blue-05)] py-1 px-3 tracking-widest font-mono z-20 pointer-events-none"
             >
               {project.status}
             </div>
 
             {/* ID + year */}
-            <div
-              style={{
-                position: "absolute",
-                top: "48px",
-                left: "52px",
-                fontFamily: "var(--font-mono)",
-                fontSize: "10px",
-                color: "var(--primary-C2)",
-                letterSpacing: "0.12em",
-                zIndex: 10,
-                pointerEvents: "none",
-              }}
-            >
+            <div className="absolute top-11 left-9 sm:top-12 sm:left-12 text-[10px] text-[var(--primary-C2)] tracking-widest font-mono z-20 pointer-events-none">
               — {project.id} · {project.year}
             </div>
           </div>
 
-          {/* ── Card body ── */}
-          <div
-            style={{
-              padding: "32px 36px",
-              borderTop: "0.5px solid var(--border-2E)",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                justifyContent: "space-between",
-                gap: "20px",
-                marginBottom: "16px",
-              }}
-            >
+          {/* ── CARD BODY CONTENT ── */}
+          <div className="p-6 sm:p-8 border-t-[0.5px] border-[var(--border-2E)]">
+            
+            {/* Title, Roles & Primary Action Target Split Block */}
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 mb-4">
               <div>
                 <h3
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "22px",
-                    fontWeight: 700,
-                    color: "var(--text)",
-                    letterSpacing: "-0.02em",
-                    marginBottom: "8px",
-                    lineHeight: 1.2,
-                  }}
+                  style={{ fontFamily: "var(--font-mono)" }}
+                  className="text-[20px] sm:text-[22px] font-bold text-[var(--text)] tracking-tight mb-2 leading-snug"
                 >
                   {project.title}
                 </h3>
 
-                <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+                {/* Developer Roles Badges */}
+                <div className="flex flex-wrap gap-1.5">
                   {project.roles.map((role) => (
                     <span
                       key={role}
-                      style={{
-                        fontFamily: "var(--font-barl)",
-                        fontSize: "16px",
-                        color: "var(--primary)",
-                        border: "0.5px solid var(--border-67)",
-                        padding: "4px 12px",
-                        letterSpacing: "0.14em",
-                        background: "var(--surface-blue-05)",
-                        textTransform: "uppercase",
-                      }}
+                      style={{ fontFamily: "var(--font-barl)" }}
+                      className="text-[14px] sm:text-[16px] text-[var(--primary)] border-[0.5px] border-[var(--border-67)] py-1 px-3 tracking-wider bg-[var(--surface-blue-05)] uppercase"
                     >
                       {role}
                     </span>
@@ -191,8 +118,8 @@ export default function ProjectCard({ project, direction }) {
                 </div>
               </div>
 
-              {/* Links */}
-              <div style={{ display: "flex", gap: "10px", flexShrink: 0 }}>
+              {/* Action Anchors */}
+              <div className="flex gap-2.5 shrink-0 w-full md:w-auto mt-2 md:mt-0">
                 <a
                   href={project.github}
                   target="_blank"
@@ -201,19 +128,10 @@ export default function ProjectCard({ project, direction }) {
                   onMouseLeave={() => setGithubHov(false)}
                   style={{
                     fontFamily: "var(--font-mono)",
-                    fontSize: "12px",
-                    textDecoration: "none",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    padding: "8px 14px",
-                    background: "var(--surface-blue-05)",
-                    /* opacity transition — compositor only */
                     color: githubHov ? "var(--primary)" : "var(--text-gray)",
-                    border: githubHov
-                      ? "0.5px solid var(--border-67)"
-                      : "0.5px solid var(--border-3D)",
-                    transition: "color 0.2s ease, border-color 0.2s ease",
+                    borderColor: githubHov ? "var(--border-67)" : "var(--border-3D)",
                   }}
+                  className="text-[12px] no-underline tracking-wider uppercase py-2 px-3.5 bg-[var(--surface-blue-05)] border-[0.5px] transition-colors duration-200 ease-out text-center flex-1 md:flex-none"
                 >
                   GitHub ↗
                 </a>
@@ -225,60 +143,33 @@ export default function ProjectCard({ project, direction }) {
                   onMouseLeave={() => setLiveHov(false)}
                   style={{
                     fontFamily: "var(--font-mono)",
-                    fontSize: "12px",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    padding: "8px 14px",
-                    color: "var(--text-dark)",
-                    background: liveHov
-                      ? "var(--primary)"
-                      : "var(--primary-C2)",
-                    transition: "background 0.25s ease",
+                    backgroundColor: liveHov ? "var(--primary)" : "var(--primary-C2)",
                   }}
+                  className="text-[12px] font-bold no-underline tracking-wider uppercase py-2 px-3.5 text-[var(--text-dark)] transition-colors duration-250 ease-out text-center flex-1 md:flex-none"
                 >
                   Live ↗
                 </a>
               </div>
             </div>
 
-            {/* Divider */}
-            <div
-              style={{
-                height: "0.5px",
-                background: "var(--border-2E)",
-                marginBottom: "16px",
-              }}
-            />
+            {/* Divider Line */}
+            <div className="h-[0.5px] bg-[var(--border-2E)] mb-4" />
 
+            {/* Long Form Summary Text Description */}
             <p
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "16px",
-                color: "var(--text-gray)",
-                lineHeight: 1.8,
-                fontWeight: 300,
-                marginBottom: "20px",
-              }}
+              style={{ fontFamily: "var(--font-body)" }}
+              className="text-[15px] sm:text-[16px] text-[var(--text-gray)] leading-relaxed font-light mb-5"
             >
               {project.desc}
             </p>
 
-            {/* Tags */}
-            <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+            {/* Framework Technical Specs Meta Tags */}
+            <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "12px",
-                    color: "var(--primary-C2)",
-                    border: "0.5px solid var(--border-67)",
-                    padding: "4px 10px",
-                    letterSpacing: "0.08em",
-                    background: "var(--surface-blue-05)",
-                  }}
+                  style={{ fontFamily: "var(--font-mono)" }}
+                  className="text-[11px] sm:text-[12px] text-[var(--primary-C2)] border-[0.5px] border-[var(--border-67)] py-1 px-2.5 tracking-wide bg-[var(--surface-blue-05)]"
                 >
                   {tag}
                 </span>

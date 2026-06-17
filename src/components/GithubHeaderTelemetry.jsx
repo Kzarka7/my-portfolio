@@ -62,61 +62,51 @@ export default function GithubHeaderTelemetry() {
       }
     }
 
-    fetchStats();
-  }, []);
+  fetchStats();
+}, []);
 
-  return (
-    <div
-      style={{
-        fontFamily: "var(--font-mono, monospace)",
-        fontSize: "11px",
-        color: "var(--disabled)",
-        letterSpacing: "0.05em",
-        display: "flex",
-        alignItems: "center",
-        flexWrap: "wrap",
-        gap: "12px",
-        maxWidth: "500px",
-        lineHeight: "1.6",
-        textTransform: "uppercase",
-      }}
-    >
-      <span style={{ color: "var(--primary, #00f0ff)", fontWeight: "600" }}>
-        {loading ? "✦ CORRELATING_METRICS..." : "LIVE METRICS:"}
-      </span>
+return (
+  <div
+    style={{ fontFamily: "var(--font-mono, monospace)" }}
+    className="text-[11px] text-[var(--disabled)] tracking-wider flex items-center flex-wrap justify-center md:justify-end gap-3 max-w-[500px] leading-relaxed uppercase"
+  >
+    {/* Loading State String / Identifier */}
+    <span className="text-[var(--primary,#00f0ff)] font-semibold animate-pulse">
+      {loading ? "✦ CORRELATING_METRICS..." : "LIVE METRICS:"}
+    </span>
 
-      <span>
-        REPOS[{" "}
-        <strong style={{ color: "#fff", fontVariantNumeric: "tabular-nums" }}>
-          {stats.repos}
-        </strong>{" "}
-        ]
-      </span>
+    {/* Repos Block */}
+    <span className="whitespace-nowrap">
+      REPOS[{" "}
+      <strong className="text-white tabular-nums font-bold">
+        {stats.repos}
+      </strong>{" "}
+      ]
+    </span>
 
-      <span style={{ color: "var(--border-2E, #222)" }}>❘</span>
+    {/* Separator Pipe 1 */}
+    <span className="text-[var(--border-2E,#222)] hidden sm:inline">❘</span>
 
-      <span>
-        COMMITS[{" "}
-        <strong style={{ color: "#fff", fontVariantNumeric: "tabular-nums" }}>
-          {stats.commits}
-        </strong>{" "}
-        ]
-      </span>
+    {/* Commits Block */}
+    <span className="whitespace-nowrap">
+      COMMITS[{" "}
+      <strong className="text-white tabular-nums font-bold">
+        {stats.commits}
+      </strong>{" "}
+      ]
+    </span>
 
-      <span style={{ color: "var(--border-2E, #222)" }}>❘</span>
+    {/* Separator Pipe 2 */}
+    <span className="text-[var(--border-2E,#222)] hidden sm:inline">❘</span>
 
-      <span>
-        CONTRIBS[{" "}
-        <strong
-          style={{
-            color: "var(--primary, #00f0ff)",
-            fontVariantNumeric: "tabular-nums",
-          }}
-        >
-          {stats.contribs}
-        </strong>{" "}
-        ]
-      </span>
-    </div>
-  );
+    {/* Combined Total Contributions Grid Units Block */}
+    <span className="whitespace-nowrap">
+      CONTRIBS[{" "}
+      <strong className="text-[var(--primary,#00f0ff)] tabular-nums font-bold">
+        {stats.contribs}
+      </strong>{" "}
+      ]
+    </span>
+  </div>
+);
 }

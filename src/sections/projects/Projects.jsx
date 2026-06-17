@@ -7,7 +7,7 @@ import SectionHeader from "../../components/SectionHeader";
 import ProjectCard from "./ProjectCard";
 import ArrowButton from "./ArrowButton";
 
-// ── 🎯 IMPORT YOUR NEW TELEMETRY NODE HERE ──
+// ── 🎯 TELEMETRY NODE IMPORT ──
 import GithubHeaderTelemetry from "../../components/GithubHeaderTelemetry";
 
 export default function Projects() {
@@ -30,32 +30,20 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        position: "relative",
-        zIndex: 1,
-      }}
+      className="relative flex items-center min-h-screen mx-4 z-[1] py-20 md:py-32"
     >
-      <div
-        style={{
-          padding: "80px 0",
-          maxWidth: "1200px",
-          width: "100%",
-          margin: "0 auto",
-        }}
-      >
-        {/* ── 🛠️ TELEMETRY DROPPED INTO THE DESCRIPTION PROP ── */}
-        <SectionHeader 
+      <div className="w-full max-w-[1200px] mx-auto">
+        
+        {/* Header Block with Telemetry Component Injection */}
+        <SectionHeader
           number={sectionHeader.projects.number}
           label={sectionHeader.projects.label}
           title={sectionHeader.projects.title}
           highlight={sectionHeader.projects.highlight}
-          description={<GithubHeaderTelemetry />} 
+          description={<GithubHeaderTelemetry />}
         />
 
-        {/* ── Controls ── */}
+        {/* ── CONTROLS ROW ROW CONTAINER ── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,53 +52,36 @@ export default function Projects() {
             duration: 0.7,
             delay: 0.08,
           }}
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "100%",
-            marginBottom: "24px",
-          }}
+          className="flex flex-wrap sm:flex-nowrap justify-between items-center w-full gap-4 mb-6"
         >
-          {/* Dot indicators */}
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          {/* Active Dot Indicators Stretcher */}
+          <div className="flex items-center gap-2.5 order-1">
             {projectsData.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
                 style={{
                   width: i === current ? "32px" : "10px",
-                  height: "10px",
-                  borderRadius: i === current ? "50px" : "50%",
-                  background:
-                    i === current ? "var(--primary)" : "var(--disabled)",
-                  border: "none",
-                  padding: 0,
-                  cursor: "pointer",
-                  transition: "all 0.35s ease",
-                  boxShadow:
-                    i === current ? "0 0 8px var(--primary-99)" : "none",
-                  flexShrink: 0,
+                  boxShadow: i === current ? "0 0 8px var(--primary-99)" : "none",
                 }}
+                className={`h-2.5 rounded-full p-0 cursor-pointer border-none transition-all duration-350 ease-out shrink-0 ${
+                  i === current ? "bg-[var(--primary)]" : "bg-[var(--disabled)]"
+                }`}
               />
             ))}
           </div>
 
-          {/* Counter */}
+          {/* Slider Numerical Counter */}
           <div
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "12px",
-              color: "var(--primary-C2)",
-              letterSpacing: "0.1em",
-            }}
+            style={{ fontFamily: "var(--font-mono)" }}
+            className="text-[12px] text-[var(--primary-C2)] tracking-wider order-2 sm:mx-auto"
           >
             {String(current + 1).padStart(2, "0")} /{" "}
             {String(projectsData.length).padStart(2, "0")}
           </div>
 
-          {/* Arrows */}
-          <div style={{ display: "flex", gap: "10px" }}>
+          {/* Action Arrow Buttons Navigation */}
+          <div className="flex gap-2.5 order-3 ml-auto sm:ml-0">
             <ArrowButton
               direction="left"
               onClick={prev}
@@ -124,7 +95,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* ── Card ── */}
+        {/* ── PRESENTATION CARDS VIEWPORT ── */}
         <ProjectCard project={projectsData[current]} direction={direction} />
       </div>
     </section>

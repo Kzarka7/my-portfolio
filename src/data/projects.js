@@ -5,7 +5,7 @@ export const projectsData = [
     id: "001",
     title: "BingeRoll",
     roles: ["Project Manager", "Lead Developer"],
-    desc: "Bingeroll is a responsive web application designed for searching, cataloging, and managing media titles. The platform connects to external media databases to retrieve real-time data on movies and television series, including plot summaries, release dates, and cast details.",
+    desc: "Bingeroll is a responsive web application designed for searching, cataloging, and managing media titles.",
     tags: ["HTML5", "CSS3", "JavaScript"],
     image: projectImage1,
     github: "https://github.com/Kzarka7/BingeRoll",

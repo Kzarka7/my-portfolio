@@ -9,36 +9,28 @@ export default function ArrowButton({ direction, onClick, disabled }) {
       disabled={disabled}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
-      aria-label="Next project"
+      aria-label={direction === "left" ? "Previous project" : "Next project"}
       style={{
-        width: "46px",
-        height: "46px",
-        border: disabled
-          ? "0.5px solid var(--disabled)"
+        borderColor: disabled
+          ? "var(--disabled)"
           : hov
-            ? "0.5px solid var(--primary)"
-            : "0.5px solid var(--primary-C2)",
-        background: hov && !disabled ? "var(--surface-blue-05)" : "transparent",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        cursor: disabled ? "not-allowed" : "pointer",
-        transition: "all 0.2s ease",
-        flexShrink: 0,
-        position: "relative",
-        overflow: "hidden",
+            ? "var(--primary)"
+            : "var(--primary-C2)",
       }}
+      className={`w-[46px] h-[46px] border-[0.5px] bg-transparent flex items-center justify-center relative overflow-hidden shrink-0 transition-all duration-200 ease-in-out ${
+        disabled ? "cursor-not-allowed" : "cursor-pointer"
+      }`}
     >
-      <span
+      {/* Interactive sliding background overlay block */}
+      <div
         style={{
-          position: "absolute",
-          inset: 0,
-          background: "var(--surface-blue-05)",
           transform: hov && !disabled ? "scaleX(1)" : "scaleX(0)",
           transformOrigin: direction === "left" ? "right" : "left",
-          transition: "transform 0.2s ease",
         }}
+        className="absolute inset-0 bg-[var(--surface-blue-05)] transition-transform duration-200 ease-in-out"
       />
+
+      {/* Navigation Arrow SVG */}
       <svg
         width="16"
         height="16"
@@ -54,7 +46,7 @@ export default function ArrowButton({ direction, onClick, disabled }) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ transition: "stroke 0.2s", position: "relative", zIndex: 1 }}
+        className="relative z-10 transition-colors duration-200"
       >
         {direction === "left" ? (
           <path d="M15 18l-6-6 6-6" />
