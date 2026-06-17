@@ -17,7 +17,7 @@ export default function ProfileImage() {
       initial={{ opacity: 0, x: -64 }}
       animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -64 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      style={{ position: "relative" }}
+      className="relative w-[300px] h-[300px] md:w-[366px] md:h-[366px]"
     >
       {/* Pulsing glow ring */}
       <motion.div
@@ -29,18 +29,13 @@ export default function ProfileImage() {
           ],
         }}
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          position: "absolute",
-          inset: "-10px",
-          border: "0.5px solid var(--border-2E)",
-          pointerEvents: "none",
-        }}
+        className="absolute inset-[-10px] border-[0.5px] border-[var(--border-2E)]"
       />
 
       {/* ── Image frame — GlareHover wraps the entire square ── */}
       <GlareHover
-        width="366px"
-        height="366px"
+        width="100%"
+        height="100%"
         background="var(--surface-05)"
         borderColor="var(--primary-59)"
         glareColor="#4FC3F7"
@@ -48,11 +43,7 @@ export default function ProfileImage() {
         glareAngle={-45}
         glareSize={300}
         transitionDuration={700}
-        style={{
-          aspectRatio: "1 / 1",
-          border: "0.5px solid var(--primary-59)",
-          position: "relative",
-        }}
+        className="aspect-square border-[0.5px] border-[var(--primary-59)] relative"
       >
         <CornerBrackets color="var(--primary)" size="14" strokeWidth="1.2" />
 

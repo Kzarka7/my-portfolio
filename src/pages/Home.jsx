@@ -15,8 +15,8 @@ export default function Home() {
       <main>
         <div className="grid-bg" />
 
-        {/* <Hero />
-        <Skills />
+        <Hero />
+        {/* <Skills />
         <Projects />
         <Education />
         <Contact />
