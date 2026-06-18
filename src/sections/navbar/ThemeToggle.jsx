@@ -36,7 +36,7 @@ export default function ThemeToggle() {
       {/* Icon Display (Sun/Moon Background Layer) */}
       <motion.div
         animate={{ x: isDark ? 0 : "var(--slide-dist)" }}
-        transition={{ type: "spring", stiffness: 400, damping: 28 }}
+        transition={{ type: "spring", stiffness: 10000000, damping: 50000 }}
         className="w-4 h-4 md:w-5 md:h-5 flex items-center justify-center bg-transparent"
       >
         {isDark ? (

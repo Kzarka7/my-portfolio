@@ -44,20 +44,19 @@
 
 /* ── ☀️ LIGHT MODE OVERRIDES ── */
 .light {
-  --bg: #f8fafc; /* Crisp, elegant slate-white */
+  --bg: #f8fafc; 
 
-  --surface: #ffffff; /* pure white cards */
-  --surface-05: #f1f5f9; /* cool gray image backing containers */
+  --surface: #ffffff; 
+  --surface-05: #f1f5f9; 
   --surface-blue-05: rgba(0, 102, 135, 0.03); 
   --surface-0D: rgba(0, 102, 135, 0.06); 
 
-  --text: #0f172a; /* Deep charcoal slate for perfect typography reading contrast */
-  --text-gray: #475569; /* Balanced slate gray for captions */
-  --text-dark: #fbfbfb; /* Swapped to white for components that flip color states */
+  --text: #0f172a; 
+  --text-gray: #475569; 
+  --text-dark: #fbfbfb; 
   --muted: #94a3b8;
   --disabled: rgba(0, 102, 135, 0.25);
 
-  /* Deepened cyan brand color accent for optimal AA/AAA text legibility contrast metrics */
   --primary: #006687; 
   --primary-E2: rgba(0, 102, 135, 0.9);
   --primary-C2: rgba(0, 102, 135, 0.75); 
@@ -96,8 +95,10 @@ body::before {
     var(--border-2E) 1px,
     transparent 1px
   );
-
   background-size: 80px 80px;
+  
+  /* ── 🛠️ UPDATED: Slower rising grid loop layout ── */
+  animation: riseGridBase 90s linear infinite;
 }
 
 h1,
@@ -138,16 +139,15 @@ h3 {
     ),
     radial-gradient(var(--primary-1F) 1px, transparent 1px);
 
-  background-size:
-    auto,
-    auto,
-    40px 40px;
-
+  background-size: auto, auto, 40px 40px;
   pointer-events: none;
   z-index: 0;
+
+  /* ── 🛠️ UPDATED: Faster rising grid overlay loop creating a floating parallax feel ── */
+  animation: riseGridOverlay 50s linear infinite;
 }
 
-/* Ensure components transition smoothly when changing themes */
+/* Ensure structural components transition smoothly when changing themes */
 *, *::before, *::after {
   transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -160,4 +160,31 @@ span, a, p, h1, h2, h3, button, svg {
 ::placeholder {
   color: var(--muted) !important;
   opacity: 1;
+}
+
+/* ── 🛠️ NEW: UPWARD RISING MATRIX TIMELINES ── */
+@keyframes riseGridBase {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    /* 🟢 Set to exactly -80px to pull the grid cleanly upward along the Y-axis without jumping seams */
+    background-position: 0px -80px;
+  }
+}
+
+@keyframes riseGridOverlay {
+  from {
+    background-position: 0 0, 0 0, 0px 0px;
+  }
+  to {
+    /* 🟢 Moves only the third background index (the dot matrix element) vertically upward */
+    background-position: 0 0, 0 0, 0px -40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, .grid-bg {
+    animation: none !important;
+  }
 }
