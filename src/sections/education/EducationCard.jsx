@@ -13,7 +13,7 @@ export default function EducationCard({ education, index }) {
       transition={{ duration: 0.5, delay: index * 0.12 }}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
-      className="grid grid-cols-[48px_1fr] gap-5 md:px-5 py-6 border-b border-[var(--border-3D)] cursor-pointer relative"
+      className="grid grid-cols-[48px_1fr] gap-3 md:gap-5 md:px-5 py-6 border-b border-[var(--border-3D)] cursor-pointer relative"
     >
       {/* Interactive indicator bar pinned to the left edge */}
       <span
@@ -41,8 +41,16 @@ export default function EducationCard({ education, index }) {
           />
         </div>
 
-        {/* Vertical timeline connector connector line */}
-        <div className="w-[0.5px] flex-1 bg-[var(--muted)] min-h-[20px]" />
+        {/* ── 🛠️ ANIMATED TIMELINE CONNECTOR LINE ── */}
+        <motion.div 
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: false }}
+          /* Synchronized with the card slide reveal or custom tuned */
+          transition={{ duration: 0.6, ease: "easeInOut", delay: (index * 0.12) + 0.2 }}
+          style={{ transformOrigin: "top" }}
+          className="w-[0.5px] flex-1 bg-[var(--muted)] min-h-[20px]"
+        />
       </div>
 
       {/* Content Metadata Block */}
