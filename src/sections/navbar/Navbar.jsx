@@ -47,7 +47,7 @@ export default function Navbar() {
         <a
           href="#about"
           style={{ fontFamily: "var(--font-mono)" }}
-          className="font-bold text-[16px] text-[var(--text)] tracking-[0.01em] no-underline cursor-pointer select-none"
+          className="font-bold text-[18px] text-[var(--text)] tracking-[0.01em] no-underline cursor-pointer select-none"
         >
           JOHN
           <span className="text-[var(--primary)] sm:hidden">.</span>
@@ -67,7 +67,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex lg:hidden items-center justify-center p-1.5 rounded-lg text-[var(--text)] transition-colors cursor-pointer"
+            className="flex lg:hidden items-center justify-center py-1.5 pl-1.5 rounded-lg text-[var(--text)] transition-colors cursor-pointer"
             aria-label="Toggle Menu"
           >
             {isOpen ? (
