@@ -24,7 +24,7 @@ export default function ProfileImage() {
         animate={{
           boxShadow: [
             "0 0 0px 0px var(--primary-00)",
-            "0 0 28px 4px var(--border-2E)",
+            "0 0 36px 4px var(--border-2E)",
             "0 0 0px 0px var(--primary-00)",
           ],
         }}
@@ -50,56 +50,26 @@ export default function ProfileImage() {
         <img
           src={profileImage1}
           alt="John Benedict Gala - Computer Engineering Student"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
-            filter: "brightness(0.85) contrast(1.1)",
-            scale: "0.8",
-          }}
+          className="w-full h-full object-cover block brightness-[0.85] contrast-[1.1] scale-[0.8]"
         />
 
         {/* Bottom gradient */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: "60%",
-            background:
-              "linear-gradient(to top, rgb(0,0,0) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
+        <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-to-t from-black from-0% to-transparent to-70% pointer-events-none" />
 
         {/* Name tag */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "16px",
-            left: "16px",
-            right: "16px",
-          }}
-        >
+        <div className="absolute bottom-[16px] left-[16px] right-[16px]">
           <div
+            className="text-[8px] text-[var(--disabled)] tracking-[0.14em] mb-[3px]"
             style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "8px",
-              color: "var(--disabled)",
-              letterSpacing: "0.14em",
-              marginBottom: "3px",
             }}
           >
             // PROFILE_IMG
           </div>
           <div
+            className="text-[14px] text-[var(--text)] tracking-[0.14em]"
             style={{
               fontFamily: "var(--font-barl)",
-              fontSize: "12px",
-              color: "var(--text)",
-              letterSpacing: "0.14em",
             }}
           >
             JOHN BENEDICT M. GALA
@@ -108,23 +78,18 @@ export default function ProfileImage() {
 
         {/* Scan line — opacity + translateY, GPU-composited */}
         <motion.div
-          animate={{ y: ["-2px", "102%", "-2px"] }}
+          initial={{ y: -5 }} 
+          animate={{ y: [-5, 370, -5] }} 
           transition={{
-            duration: 3.5,
+            duration: 7.0, 
             repeat: Infinity,
-            ease: "linear",
-            repeatDelay: 2.5,
+            ease: "linear", 
+            repeatDelay: 2.5, 
           }}
+          className="absolute top-0 left-0 right-0 h-px pointer-events-none will-change-transform"
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: "1px",
             background:
               "linear-gradient(90deg, transparent, var(--primary-C2), transparent)",
-            pointerEvents: "none",
-            willChange: "transform",
           }}
         />
       </GlareHover>
@@ -133,16 +98,9 @@ export default function ProfileImage() {
 
       {/* Measurement annotation */}
       <div
+        className="absolute right-[-44px] top-1/2 -translate-y-1/2 rotate-90 text-[8px] text-[var(--disabled)] tracking-[0.16em] whitespace-nowrap"
         style={{
-          position: "absolute",
-          right: "-44px",
-          top: "50%",
-          transform: "translateY(-50%) rotate(90deg)",
           fontFamily: "var(--font-mono)",
-          fontSize: "8px",
-          color: "var(--disabled)",
-          letterSpacing: "0.16em",
-          whiteSpace: "nowrap",
         }}
       >
         320×320 · 1:1
