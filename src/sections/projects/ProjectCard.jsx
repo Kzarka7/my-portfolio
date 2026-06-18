@@ -37,7 +37,7 @@ export default function ProjectCard({ project, direction }) {
       className="relative will-change-transform"
     >
       {/* ── 🎯 FIX: Added clipping viewport wrapper directly around AnimatePresence ── */}
-      <div className="w-full overflow-hidden relative rounded-2xl">
+      <div className="w-full overflow-hidden relative">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             onHoverStart={() => setHov(true)}
@@ -53,7 +53,7 @@ export default function ProjectCard({ project, direction }) {
                 ? "0.5px solid var(--border-67)"
                 : "0.5px solid var(--border-2E)",
             }}
-            className="bg-[var(--surface)] relative overflow-hidden transition-colors duration-300 ease-in-out rounded-2xl"
+            className="bg-[var(--surface)] relative overflow-hidden transition-colors duration-300 ease-in-out"
           >
             {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-[var(--primary-C2)] z-10" />
