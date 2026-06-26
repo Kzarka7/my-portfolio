@@ -39,7 +39,7 @@ export default function NavLinks() {
               className={`relative px-4 py-2 text-[12px] font-medium uppercase tracking-[0.14em] no-underline transition-colors duration-300 cursor-pointer select-none block rounded-xl ${
                 isActive 
                   ? "text-[var(--primary)]" 
-                  : "text-[var(--text-gray)] hover:text-[var(--primary)]"
+                  : "text-[var(--text-caption)] hover:text-[var(--primary)]"
               }`}
             >
               {/* Force text above the background slide wrapper pane */}

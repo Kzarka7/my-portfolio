@@ -74,7 +74,7 @@ export default function SkillCard({ skill, index }) {
           <div
             style={{ 
               fontFamily: "var(--font-mono)",
-              color: isHighlighted ? skill.color : "var(--text-gray)" 
+              color: isHighlighted ? skill.color : "var(--text)" 
             }}
             className="text-[14px] font-bold tracking-tight truncate"
           >
@@ -84,7 +84,7 @@ export default function SkillCard({ skill, index }) {
           <div
             style={{ 
               fontFamily: "var(--font-body)",
-              color: isHighlighted ? `${skill.color}d2` : "var(--text-gray)" 
+              color: isHighlighted ? `${skill.color}d2` : "var(--text-caption)" 
             }}
             className="text-[12px] leading-snug mt-0.5 line-clamp-2"
           >

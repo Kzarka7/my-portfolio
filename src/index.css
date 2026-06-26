@@ -19,8 +19,8 @@
   --surface-blue-05: #4fc3f705; /* open to internship background color */
   --surface-0D: #4fc3f70d; /* background hover in education icon */
 
-  --text: #fbfbfb; /* Main Text */
-  --text-gray: #d2d2d2; /* Caption */
+  --text: #e8e8e8; /* Main Text */
+  --text-caption: #d2d2d2; /* Caption */
   --text-dark: #0e0e0e;
   --muted: #a7a7a7;
   --disabled: #4fc2f75d;

@@ -21,7 +21,7 @@ export default function FooterProfile() {
       {/* ── Professional Academic Metadata ── */}
       <div
         style={{ fontFamily: "var(--font-barl)" }}
-        className="text-[14px] text-[var(--text-gray)] tracking-[0.12em] uppercase leading-[1.6]"
+        className="text-[14px] text-[var(--text-caption)] tracking-[0.12em] uppercase leading-[1.6]"
       >
         Intern Student
         <br />

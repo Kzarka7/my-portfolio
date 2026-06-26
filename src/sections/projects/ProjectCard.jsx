@@ -129,7 +129,7 @@ export default function ProjectCard({ project, direction }) {
                     onMouseLeave={() => setGithubHov(false)}
                     style={{
                       fontFamily: "var(--font-mono)",
-                      color: githubHov ? "var(--primary)" : "var(--text-gray)",
+                      color: githubHov ? "var(--primary)" : "var(--text-caption)",
                       borderColor: githubHov ? "var(--border-67)" : "var(--border-3D)",
                     }}
                     className="text-[12px] no-underline tracking-wider uppercase py-2 px-3.5 bg-[var(--surface-blue-05)] border-[0.5px] transition-colors duration-200 ease-out text-center flex-1 md:flex-none"
@@ -159,7 +159,7 @@ export default function ProjectCard({ project, direction }) {
               {/* Long Form Summary Text Description */}
               <p
                 style={{ fontFamily: "var(--font-body)" }}
-                className="text-[15px] sm:text-[16px] text-[var(--text-gray)] leading-relaxed font-light mb-5"
+                className="text-[15px] sm:text-[16px] text-[var(--text-caption)] leading-relaxed font-light mb-5"
               >
                 {project.desc}
               </p>

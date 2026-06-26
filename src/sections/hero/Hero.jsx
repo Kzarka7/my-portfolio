@@ -74,7 +74,7 @@ export default function Hero() {
           <motion.p
             {...fade(0.32)}
             style={{ fontFamily: "var(--font-mono)" }}
-            className="text-[14px] text-[#cbcbcb] leading-[1.75] max-w-[600px] mb-8 font-light"
+            className="text-[14px] text-[var(--text-caption)] leading-[1.75] max-w-[600px] mb-8 font-light"
           >
             {info.bio}
           </motion.p>

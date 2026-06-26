@@ -35,7 +35,7 @@ export default function EducationCard({ education, index }) {
         >
           <Icon
             style={{
-              color: hov ? education.color : "var(--text-gray)",
+              color: hov ? education.color : "var(--text)",
             }}
             className="text-[16px] transition-colors duration-250"
           />
@@ -70,7 +70,7 @@ export default function EducationCard({ education, index }) {
             style={{
               fontFamily: "var(--font-mono)",
               borderColor: education.status === "ONGOING" ? "var(--border-67)" : "var(--border-3D)",
-              color: education.status === "ONGOING" ? "var(--primary)" : "var(--text-gray)",
+              color: education.status === "ONGOING" ? "var(--primary)" : "var(--text-caption)",
             }}
             className="text-[11px] bg-[var(--surface-blue-05)] border-[0.5px] px-2 py-[2px] tracking-[0.1em]"
           >
@@ -80,7 +80,7 @@ export default function EducationCard({ education, index }) {
           {/* Timeline Year Tracker */}
           <span
             style={{ fontFamily: "var(--font-mono)" }}
-            className="text-[11px] text-[var(--text-gray)] tracking-[0.1em] ml-auto"
+            className="text-[11px] text-[var(--text-caption)] tracking-[0.1em] ml-auto"
           >
             {education.year}
           </span>
@@ -90,7 +90,7 @@ export default function EducationCard({ education, index }) {
         <h3
           style={{ fontFamily: "var(--font-mono)" }}
           className={`text-[18px] font-bold mb-1 tracking-[-0.01em] transition-colors duration-200 ${
-            hov ? "text-[var(--text)]" : "text-[var(--text-gray)]"
+            hov ? "text-[var(--text)]" : "text-[var(--text)]"
           }`}
         >
           {education.title}
@@ -111,7 +111,7 @@ export default function EducationCard({ education, index }) {
         {/* Description Details paragraph */}
         <p
           style={{ fontFamily: "var(--font-body)" }}
-          className="text-[15px] text-[var(--text-gray)] leading-[1.7] font-light"
+          className="text-[15px] text-[var(--text-caption)] leading-[1.7] font-light"
         >
           {education.desc}
         </p>

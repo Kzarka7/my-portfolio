@@ -32,7 +32,7 @@ export default function Education() {
               {/* Category Sub-Header Line Tracker */}
               <div
                 style={{ fontFamily: "var(--font-mono)" }}
-                className="text-[12px] text-[var(--text-gray)] tracking-[0.18em] uppercase mb-1 flex items-center gap-3"
+                className="text-[12px] text-[var(--text-caption)] tracking-[0.18em] uppercase mb-1 flex items-center gap-3"
               >
                 {cat.category}
                 <span className="flex-1 h-[0.5px] bg-[var(--muted)] block" />

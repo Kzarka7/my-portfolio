@@ -78,7 +78,7 @@ return (
     {/* Repos Block */}
     <span className="whitespace-nowrap">
       REPOS[{" "}
-      <strong className="text-white tabular-nums font-bold">
+      <strong className="text-[var(--text)] tabular-nums font-bold">
         {stats.repos}
       </strong>{" "}
       ]
@@ -90,7 +90,7 @@ return (
     {/* Commits Block */}
     <span className="whitespace-nowrap">
       COMMITS[{" "}
-      <strong className="text-white tabular-nums font-bold">
+      <strong className="text-[var(--text)] tabular-nums font-bold">
         {stats.commits}
       </strong>{" "}
       ]
@@ -102,7 +102,7 @@ return (
     {/* Combined Total Contributions Grid Units Block */}
     <span className="whitespace-nowrap">
       CONTRIBS[{" "}
-      <strong className="text-[var(--primary,#00f0ff)] tabular-nums font-bold">
+      <strong className="text-[var(--text)] tabular-nums font-bold">
         {stats.contribs}
       </strong>{" "}
       ]
