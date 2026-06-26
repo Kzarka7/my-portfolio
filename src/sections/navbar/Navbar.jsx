@@ -40,9 +40,12 @@ export default function Navbar() {
       {/* Floating Pill Frame */}
       <div
         /* 🟢 FIXED: Corrected 'gl:py-4' typo to 'lg:py-4' */
-        className={`w-full flex items-center justify-between px-4 md:px-8 py-2 lg:py-3 rounded-2xl border border-[var(--border-3D)] shadow-[0_8px_24px_rgba(27,27,27,0.3)] backdrop-blur-[50px] transition-all duration-300 ease-in-out ${
+        className={`w-full flex items-center justify-between px-4 md:px-8 py-2 lg:py-3 rounded-2xl border border-[var(--border-3D)] backdrop-blur-[50px] transition-all duration-300 ease-in-out ${
           scrolled ? "bg-[#ffffff08]" : "bg-[#ffffff06]"
         }`}
+        style={{
+          boxShadow: "0 4px 16px rgba(27, 27, 27, 0.15)"
+        }}
       >
         <a
           href="#about"

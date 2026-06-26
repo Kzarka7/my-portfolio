@@ -42,8 +42,8 @@
   --font-body: "Geist", sans-serif;
 
   /* Dynamic ambient glow targets to keep aurora working across themes */
-  --aurora-1: rgba(79, 195, 247, 0.08);
-  --aurora-2: rgba(79, 195, 247, 0.05);
+  --aurora-1: #4fc2f718;
+  --aurora-2: #4fc2f70f;
 }
 
 /* ── ☀️ LIGHT MODE OVERRIDES ── */
@@ -52,32 +52,32 @@
 
   --surface: #ffffff; /* pure white cards */
   --surface-05: #f1f5f9; /* cool gray image backing containers */
-  --surface-blue-05: rgba(0, 102, 135, 0.03); 
-  --surface-0D: rgba(0, 102, 135, 0.06); 
+  --surface-blue-05: #00668708; 
+  --surface-0D: #0066870f; 
 
   --text: #0f172a; /* Deep charcoal slate for perfect typography reading contrast */
   --text-gray: #475569; /* Balanced slate gray for captions */
   --text-dark: #fbfbfb; /* Swapped to white for components that flip color states */
   --muted: #94a3b8;
-  --disabled: rgba(0, 102, 135, 0.25);
+  --disabled: #00668740;
 
   /* Deepened cyan brand color accent for optimal AA/AAA text legibility contrast metrics */
   --primary: #006687; 
-  --primary-E2: rgba(0, 102, 135, 0.9);
-  --primary-C2: rgba(0, 102, 135, 0.75); 
+  --primary-E2: #006687e6;
+  --primary-C2: #006687bf; 
 
-  --border-67: rgba(0, 102, 135, 0.3); 
-  --border-2E: rgba(0, 102, 135, 0.12); 
-  --border-3D: rgba(15, 23, 42, 0.15);
+  --border-67: #0066874d; 
+  --border-2E: #0066871f; 
+  --border-3D: #0f172a26;
 
-  --primary-00: rgba(0, 102, 135, 0); 
-  --primary-99: rgba(0, 102, 135, 0.5); 
-  --primary-1F: rgba(0, 102, 135, 0.14); 
-  --primary-59: rgba(0, 102, 135, 0.35); 
+  --primary-00: #00668700; 
+  --primary-99: #00668780; 
+  --primary-1F: #00668724; 
+  --primary-59: #00668759; 
 
   /* Tailored light-mode aurora colors to maintain depth */
-  --aurora-1: rgba(0, 102, 135, 0.05);
-  --aurora-2: rgba(0, 102, 135, 0.03);
+  --aurora-1: #4fc3f714;
+  --aurora-2: #4fc3f70d;
 }
 
 html {

@@ -9,10 +9,6 @@ export default function App() {
 
   return (
     <>
-      {/* 1. Preloader Overlay Layer */}
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-      </AnimatePresence>
 
       {/* 2. Page Router Layer (Always mounted so it's ready underneath) */}
       <Routes>
