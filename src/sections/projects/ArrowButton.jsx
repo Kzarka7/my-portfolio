@@ -27,7 +27,7 @@ export default function ArrowButton({ direction, onClick, disabled }) {
           transform: hov && !disabled ? "scaleX(1)" : "scaleX(0)",
           transformOrigin: direction === "left" ? "right" : "left",
         }}
-        className="absolute inset-0 bg-[var(--surface-blue-05)] transition-transform duration-200 ease-in-out"
+        className="absolute inset-0 bg-[var(--surface-secondary)] transition-transform duration-200 ease-in-out"
       />
 
       {/* Navigation Arrow SVG */}

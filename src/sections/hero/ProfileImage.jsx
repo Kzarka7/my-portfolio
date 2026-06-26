@@ -36,7 +36,7 @@ export default function ProfileImage() {
       <GlareHover
         width="100%"
         height="100%"
-        background="var(--surface-05)"
+        background="var(--surface-profile)"
         borderColor="var(--border-secondary)"
         glareColor="#4FC3F7"
         glareOpacity={0.12}

@@ -51,7 +51,7 @@ export default function NavLinks() {
                   layoutId="desktop-nav-active-square"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   /* ── 🛠️ UPDATED: Changed from a bottom line configuration to full bounding coverage ── */
-                  className="absolute inset-0 z-0 bg-[var(--surface-1F)] border border-[var(--border-secondary)] rounded-xl shadow-[0_0_8px_rgba(var(--primary-rgb),0.15)]"
+                  className="absolute inset-0 z-0 bg-[var(--surface-active)] border border-[var(--border-secondary)] rounded-xl shadow-[0_0_8px_rgba(var(--primary-rgb),0.15)]"
                 />
               )}
             </a>

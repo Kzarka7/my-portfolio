@@ -81,7 +81,7 @@ export default function ProjectCard({ project, direction }) {
               {/* Status badge */}
               <div
                 style={{ backdropFilter: "blur(6px)" }}
-                className="absolute top-10 right-9 sm:top-12 sm:right-12 text-[9px] text-[var(--primary)] border-[0.5px] border-[var(--border-secondary)] bg-[var(--surface-blue-05)] py-1 px-3 tracking-widest font-mono z-20 pointer-events-none"
+                className="absolute top-10 right-9 sm:top-12 sm:right-12 text-[9px] text-[var(--primary)] border-[0.5px] border-[var(--border-secondary)] bg-[var(--surface-secondary)] py-1 px-3 tracking-widest font-mono z-20 pointer-events-none"
               >
                 {project.status}
               </div>
@@ -111,7 +111,7 @@ export default function ProjectCard({ project, direction }) {
                       <span
                         key={role}
                         style={{ fontFamily: "var(--font-barl)" }}
-                        className="text-[14px] sm:text-[16px] text-[var(--primary)] border-[0.5px] border-[var(--border-secondary)] py-1 px-3 tracking-wider bg-[var(--surface-blue-05)] uppercase"
+                        className="text-[14px] sm:text-[16px] text-[var(--primary)] border-[0.5px] border-[var(--border-secondary)] py-1 px-3 tracking-wider bg-[var(--surface-secondary)] uppercase"
                       >
                         {role}
                       </span>
@@ -132,7 +132,7 @@ export default function ProjectCard({ project, direction }) {
                       color: githubHov ? "var(--primary)" : "var(--text-caption)",
                       borderColor: githubHov ? "var(--border-secondary)" : "var(--border-muted)",
                     }}
-                    className="text-[12px] no-underline tracking-wider uppercase py-2 px-3.5 bg-[var(--surface-blue-05)] border-[0.5px] transition-colors duration-200 ease-out text-center flex-1 md:flex-none"
+                    className="text-[12px] no-underline tracking-wider uppercase py-2 px-3.5 bg-[var(--surface-secondary)] border-[0.5px] transition-colors duration-200 ease-out text-center flex-1 md:flex-none"
                   >
                     GitHub ↗
                   </a>
@@ -170,7 +170,7 @@ export default function ProjectCard({ project, direction }) {
                   <span
                     key={tag}
                     style={{ fontFamily: "var(--font-mono)" }}
-                    className="text-[11px] sm:text-[12px] text-[var(--text-colored)] border-[0.5px] border-[var(--border-secondary)] py-1 px-2.5 tracking-wide bg-[var(--surface-blue-05)]"
+                    className="text-[11px] sm:text-[12px] text-[var(--text-colored)] border-[0.5px] border-[var(--border-secondary)] py-1 px-2.5 tracking-wide bg-[var(--surface-secondary)]"
                   >
                     {tag}
                   </span>

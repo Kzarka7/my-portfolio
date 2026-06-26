@@ -29,7 +29,7 @@ export default function EducationCard({ education, index }) {
         <div
           style={{
             borderColor: hov ? education.color : "var(--border-muted)",
-            backgroundColor: hov ? "var(--surface-0D)" : "transparent",
+            backgroundColor: hov ? "var(--surface-tertiary)" : "transparent",
           }}
           className="w-10 h-10 border-[0.5px] flex items-center justify-center shrink-0 transition-all duration-250"
         >
@@ -72,7 +72,7 @@ export default function EducationCard({ education, index }) {
               borderColor: education.status === "ONGOING" ? "var(--border-secondary)" : "var(--border-muted)",
               color: education.status === "ONGOING" ? "var(--primary)" : "var(--text-caption)",
             }}
-            className="text-[11px] bg-[var(--surface-blue-05)] border-[0.5px] px-2 py-[2px] tracking-[0.1em]"
+            className="text-[11px] bg-[var(--surface-secondary)] border-[0.5px] px-2 py-[2px] tracking-[0.1em]"
           >
             {education.status}
           </span>

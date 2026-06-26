@@ -59,7 +59,7 @@ export default function SkillCard({ skill, index }) {
             border: isHighlighted
               ? `0.5px solid ${skill.color}44`
               : "1.5px solid var(--border-primary)",
-            background: isHighlighted ? `${skill.color}12` : "var(--surface-blue-05)",
+            background: isHighlighted ? `${skill.color}12` : "var(--surface-secondary)",
           }}
           className="w-12 h-12 flex items-center justify-center shrink-0 transition-colors duration-250"
         >

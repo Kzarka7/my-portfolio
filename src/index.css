@@ -15,10 +15,10 @@
   --bg-alt: transparent;
 
   --surface: #0d0d0d; /* background color of card, project, and contact container */
-  --surface-05: #050505; /* background color of the image in hero bg */
-  --surface-blue-05: #4fc3f705; /* open to internship background color */
-  --surface-0D: #4fc3f70d; /* background hover in education icon */
-  --surface-1F: #4fc3f71f; /* glowing effects of project and contact container */
+  --surface-secondary: #4fc3f705; /* open to internship background color */
+  --surface-tertiary: #4fc3f70d; /* background hover in education icon and button */
+  --surface-active: #4fc3f71f; /* background color of the active container in navbar */
+  --surface-profile: #050505; /* background color of the image */
 
   --text: #e8e8e8; /* Main Text */
   --text-caption: #d2d2d2; /* Caption */
@@ -54,10 +54,10 @@
   --bg-alt: #f1f2f3;
 
   --surface: #ffffff; /* pure white cards */
-  --surface-05: #f1f5f9; /* cool gray image backing containers */
-  --surface-blue-05: #00668708;
-  --surface-0D: #0066870f;
-  --surface-1F: #00668724;
+  --surface-secondary: #00668708;
+  --surface-tertiary: #0066870f;
+  --surface-profile: #f1f5f9; /* cool gray image backing containers */
+  --surface-active: #00668724;
 
   --text: #0f172a; /* Deep charcoal slate for perfect typography reading contrast */
   --text-caption: #475569; /* Balanced slate gray for captions */
@@ -129,10 +129,10 @@ h3 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--surface-0D);
+  background: #4fc2f71a;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-secondary);
+  background: #4fc3f7a1;
 }
 
 .grid-bg {
