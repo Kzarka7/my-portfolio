@@ -13,7 +13,7 @@ export default function EducationCard({ education, index }) {
       transition={{ duration: 0.5, delay: index * 0.12 }}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
-      className="grid grid-cols-[48px_1fr] gap-3 md:gap-5 md:px-5 py-6 border-b border-[var(--border-3D)] cursor-pointer relative"
+      className="grid grid-cols-[48px_1fr] gap-3 md:gap-5 md:px-5 py-6 border-b border-[var(--border-muted)] cursor-pointer relative"
     >
       {/* Interactive indicator bar pinned to the left edge */}
       <span
@@ -28,7 +28,7 @@ export default function EducationCard({ education, index }) {
       <div className="flex flex-col items-center gap-2">
         <div
           style={{
-            borderColor: hov ? education.color : "var(--border-3D)",
+            borderColor: hov ? education.color : "var(--border-muted)",
             backgroundColor: hov ? "var(--surface-0D)" : "transparent",
           }}
           className="w-10 h-10 border-[0.5px] flex items-center justify-center shrink-0 transition-all duration-250"
@@ -69,7 +69,7 @@ export default function EducationCard({ education, index }) {
           <span
             style={{
               fontFamily: "var(--font-mono)",
-              borderColor: education.status === "ONGOING" ? "var(--border-secondary)" : "var(--border-3D)",
+              borderColor: education.status === "ONGOING" ? "var(--border-secondary)" : "var(--border-muted)",
               color: education.status === "ONGOING" ? "var(--primary)" : "var(--text-caption)",
             }}
             className="text-[11px] bg-[var(--surface-blue-05)] border-[0.5px] px-2 py-[2px] tracking-[0.1em]"

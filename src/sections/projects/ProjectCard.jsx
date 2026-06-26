@@ -130,7 +130,7 @@ export default function ProjectCard({ project, direction }) {
                     style={{
                       fontFamily: "var(--font-mono)",
                       color: githubHov ? "var(--primary)" : "var(--text-caption)",
-                      borderColor: githubHov ? "var(--border-secondary)" : "var(--border-3D)",
+                      borderColor: githubHov ? "var(--border-secondary)" : "var(--border-muted)",
                     }}
                     className="text-[12px] no-underline tracking-wider uppercase py-2 px-3.5 bg-[var(--surface-blue-05)] border-[0.5px] transition-colors duration-200 ease-out text-center flex-1 md:flex-none"
                   >

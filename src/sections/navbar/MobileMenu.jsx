@@ -83,7 +83,7 @@ export default function MobileMenu({ scrolled, onClose }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: "-48px" }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`w-full mt-2 z-[101] lg:hidden backdrop-blur-[50px] border border-[var(--border-3D)] rounded-2xl p-4 shadow-[0_8px_24px_rgba(27,27,27,0.3)] will-change-[transform,opacity] transition-colors duration-300 ease-in-out ${
+      className={`w-full mt-2 z-[101] lg:hidden backdrop-blur-[50px] border border-[var(--border-muted)] rounded-2xl p-4 shadow-[0_8px_24px_rgba(27,27,27,0.3)] will-change-[transform,opacity] transition-colors duration-300 ease-in-out ${
         scrolled ? "bg-[#ffffff08]" : "bg-[#ffffff06]"
       }`}
     >

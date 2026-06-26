@@ -28,10 +28,10 @@
 
   --primary: #4fc3f7; /* Primary color */
   --primary-E2: #4fc3f7e2;
-
+  
   --border-primary: #4fc3f72e; /* border of project and contact container, color of slanted image in hero bg */
   --border-secondary: #4fc3f767; /* border color open, live, role, github btn, tags, status, download icon */
-  --border-3D: #ffffff3d;
+  --border-muted: #ffffff3d;
 
   --primary-00: #4fc3f700; /* glowing effects of image in hero bg */
   --primary-99: #4fc3f799; /* glowing effects of dot in project bg */

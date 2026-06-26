@@ -29,8 +29,8 @@ export default function ThemeToggle() {
           themeHover
             ? "border-[var(--primary)]"
             : isDark
-            ? "border-[var(--border-3D)] bg-transparent"
-            : "border-[var(--border-3D)] bg-[var(--surface)]"
+            ? "border-[var(--border-muted)] bg-transparent"
+            : "border-[var(--border-muted)] bg-[var(--surface)]"
         }`}
     >
       {/* Icon Display (Sun/Moon Background Layer) */}
