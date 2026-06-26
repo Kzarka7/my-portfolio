@@ -28,10 +28,9 @@
 
   --primary: #4fc3f7; /* Primary color */
   --primary-E2: #4fc3f7e2;
-  --primary-C2: green; /* Secondary Color */
 
-  --border-67: #4fc3f767; /* border color open, live, role, github btn, tags, status, download icon */
-  --border-2E: #4fc3f72e; /* border of project and contact container, color of slanted image in hero bg */
+  --border-primary: #4fc3f72e; /* border of project and contact container, color of slanted image in hero bg */
+  --border-secondary: #4fc3f767; /* border color open, live, role, github btn, tags, status, download icon */
   --border-3D: #ffffff3d;
 
   --primary-00: #4fc3f700; /* glowing effects of image in hero bg */
@@ -106,7 +105,7 @@ body::before {
 
   background-image: radial-gradient(
     circle,
-    var(--border-2E) 1px,
+    var(--border-primary) 1px,
     transparent 1px
   );
 
@@ -131,7 +130,7 @@ h3 {
   background: var(--surface-0D);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-67);
+  background: var(--border-secondary);
 }
 
 .grid-bg {

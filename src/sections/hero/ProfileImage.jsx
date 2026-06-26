@@ -24,12 +24,12 @@ export default function ProfileImage() {
         animate={{
           boxShadow: [
             "0 0 0px 0px var(--primary-00)",
-            "0 0 36px 4px var(--border-2E)",
+            "0 0 36px 4px var(--border-primary)",
             "0 0 0px 0px var(--primary-00)",
           ],
         }}
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[-10px] border-[0.5px] border-[var(--border-2E)]"
+        className="absolute inset-[-10px] border-[0.5px] border-[var(--border-primary)]"
       />
 
       {/* ── Image frame — GlareHover wraps the entire square ── */}
@@ -37,13 +37,13 @@ export default function ProfileImage() {
         width="100%"
         height="100%"
         background="var(--surface-05)"
-        borderColor="var(--primary-59)"
+        borderColor="var(--border-primary)"
         glareColor="#4FC3F7"
         glareOpacity={0.12}
         glareAngle={-45}
         glareSize={300}
         transitionDuration={700}
-        className="aspect-square border-[0.5px] border-[var(--primary-59)] relative"
+        className="aspect-square border-[0.5px] relative"
       >
         <CornerBrackets color="var(--primary)" size="14" strokeWidth="1.2" />
 

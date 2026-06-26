@@ -29,7 +29,7 @@ export default function SkillCard({ skill, index }) {
       style={{
         border: isHighlighted
           ? `0.5px solid ${skill.color}55`
-          : "0.5px solid var(--border-2E)",
+          : "0.5px solid var(--border-primary)",
         background: isHighlighted ? `${skill.color}08` : "var(--surface)",
       }}
       className="relative flex flex-col gap-3.5 p-6 transition-all duration-250 ease-out"
@@ -58,7 +58,7 @@ export default function SkillCard({ skill, index }) {
           style={{
             border: isHighlighted
               ? `0.5px solid ${skill.color}44`
-              : "1.5px solid var(--border-2E)",
+              : "1.5px solid var(--border-primary)",
             background: isHighlighted ? `${skill.color}12` : "var(--surface-blue-05)",
           }}
           className="w-12 h-12 flex items-center justify-center shrink-0 transition-colors duration-250"
@@ -94,7 +94,7 @@ export default function SkillCard({ skill, index }) {
       </div>
 
       {/* Animated Proficiency Bar */}
-      <div className="h-[2px] bg-[var(--border-2E)] overflow-hidden w-full mt-auto">
+      <div className="h-[2px] bg-[var(--border-primary)] overflow-hidden w-full mt-auto">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}

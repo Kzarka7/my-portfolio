@@ -51,7 +51,7 @@ export default function ProjectCard({ project, direction }) {
             style={{
               border: hov
                 ? "0.5px solid var(--border-67)"
-                : "0.5px solid var(--border-2E)",
+                : "0.5px solid var(--border-primary)",
             }}
             className="bg-[var(--surface)] relative overflow-hidden transition-colors duration-300 ease-in-out"
           >
@@ -93,7 +93,7 @@ export default function ProjectCard({ project, direction }) {
             </div>
 
             {/* ── CARD BODY CONTENT ── */}
-            <div className="p-6 sm:p-8 border-t-[0.5px] border-[var(--border-2E)]">
+            <div className="p-6 sm:p-8 border-t-[0.5px] border-[var(--border-primary)]">
               
               {/* Title, Roles & Primary Action Target Split Block */}
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 mb-4">
@@ -154,7 +154,7 @@ export default function ProjectCard({ project, direction }) {
               </div>
 
               {/* Divider Line */}
-              <div className="h-[0.5px] bg-[var(--border-2E)] mb-4" />
+              <div className="h-[0.5px] bg-[var(--border-primary)] mb-4" />
 
               {/* Long Form Summary Text Description */}
               <p

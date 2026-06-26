@@ -85,7 +85,7 @@ return (
     </span>
 
     {/* Separator Pipe 1 */}
-    <span className="text-[var(--border-2E,#222)] hidden sm:inline">❘</span>
+    <span className="text-[var(--text-colored)] hidden sm:inline">❘</span>
 
     {/* Commits Block */}
     <span className="whitespace-nowrap">
@@ -97,7 +97,7 @@ return (
     </span>
 
     {/* Separator Pipe 2 */}
-    <span className="text-[var(--border-2E,#222)] hidden sm:inline">❘</span>
+    <span className="text-[var(--text-colored)] hidden sm:inline">❘</span>
 
     {/* Combined Total Contributions Grid Units Block */}
     <span className="whitespace-nowrap">
