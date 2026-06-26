@@ -62,7 +62,7 @@ export default function Projects() {
                 onClick={() => goTo(i)}
                 style={{
                   width: i === current ? "32px" : "10px",
-                  boxShadow: i === current ? "0 0 8px var(--shadow-colored)" : "none",
+                  boxShadow: i === current ? "0 0 16px 4px var(--shadow-colored)" : "none",
                 }}
                 className={`h-2.5 rounded-full p-0 cursor-pointer border-none transition-all duration-350 ease-out shrink-0 ${
                   i === current ? "bg-[var(--primary)]" : "bg-[var(--disabled)]"

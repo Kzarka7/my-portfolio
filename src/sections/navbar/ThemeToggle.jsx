@@ -22,15 +22,22 @@ export default function ThemeToggle() {
       onMouseEnter={() => setThemeHover(true)}
       onMouseLeave={() => setThemeHover(false)}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      style={{ cursor: "pointer" }}
+      style={{
+        cursor: "pointer",
+        boxShadow: themeHover
+          ? isDark
+            ? "0 0 8px 2px var(--shadow-colored)"
+            : "0 0 8px 2px rgba(0, 0, 0, 0.15)"
+          : "none",
+      }}
       className={`relative flex items-center justify-between w-14 md:w-16 h-7 md:h-8 p-1 rounded-full overflow-hidden transition-all duration-300 border-[1.5px] select-none
         [--slide-dist:30px] md:[--slide-dist:34px] 
         ${
           themeHover
             ? "border-[var(--primary)]"
             : isDark
-            ? "border-[var(--border-muted)] bg-transparent"
-            : "border-[var(--border-muted)] bg-[var(--surface)]"
+              ? "border-[var(--border-muted)] bg-transparent"
+              : "border-[var(--border-muted)] bg-[var(--surface)]"
         }`}
     >
       {/* Icon Display (Sun/Moon Background Layer) */}
@@ -56,28 +63,19 @@ export default function ThemeToggle() {
       <motion.div
         animate={{ x: isDark ? 0 : "calc(-1 * var(--slide-dist))" }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
-        style={{
-          boxShadow: themeHover
-            ? isDark
-              ? "0 0 12px var(--shadow-colored)"
-              : "0 0 12px rgba(0, 0, 0, 0.15)"
-            : "none",
-        }}
         className={`w-4 h-4 md:w-5 md:h-5 rounded-full flex items-center justify-center transition-[box-shadow,background-color] duration-500 z-10 ${
-          themeHover
-            ? "bg-[var(--primary)]"
-            : "bg-[var(--text)]"
+          themeHover ? "bg-[var(--primary)]" : "bg-[var(--text)]"
         }`}
       >
         {isDark ? (
-          <FiMoon 
-            className="w-3.5 h-3.5 md:w-4 md:h-4 transition-colors duration-300" 
-            style={{ color: themeHover ? "var(--text)" : "var(--bg)" }} 
+          <FiMoon
+            className="w-3.5 h-3.5 md:w-4 md:h-4 transition-colors duration-300"
+            style={{ color: themeHover ? "var(--text)" : "var(--bg)" }}
           />
         ) : (
-          <FiSun 
-            className="w-3.5 h-3.5 md:w-4 md:h-4 transition-colors duration-300" 
-            style={{ color: themeHover ? "var(--text-inverted)" : "var(--bg)" }} 
+          <FiSun
+            className="w-3.5 h-3.5 md:w-4 md:h-4 transition-colors duration-300"
+            style={{ color: themeHover ? "var(--text-inverted)" : "var(--bg)" }}
           />
         )}
       </motion.div>

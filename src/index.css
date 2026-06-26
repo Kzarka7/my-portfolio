@@ -57,6 +57,7 @@
   --surface-05: #f1f5f9; /* cool gray image backing containers */
   --surface-blue-05: #00668708;
   --surface-0D: #0066870f;
+  --surface-1F: #00668724;
 
   --text: #0f172a; /* Deep charcoal slate for perfect typography reading contrast */
   --text-caption: #475569; /* Balanced slate gray for captions */
@@ -75,7 +76,6 @@
 
   --shadow-profile: #00668700;
   --shadow-colored: #00668759;
-  --primary-1F: #00668724;
 
   /* Tailored light-mode aurora colors to maintain depth */
   --aurora-1: transparent;
