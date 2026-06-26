@@ -38,7 +38,7 @@ export default function Skills() {
                 </div>
 
                 <div className="flex-1 h-[0.5px] bg-[var(--muted)]" />
-
+ 
                 <div
                   style={{ fontFamily: "var(--font-mono)" }}
                   className="text-[9px] text-[var(--text-gray)] tracking-[0.1em]"
