@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="relative z-10 border-t border-[var(--border-muted)] bg-[var(--bg-alt)] backdrop-blur-[50px]">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-0 py-5 pb-7">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-0 py-5">
         {/* ── 3-COLUMN GRID ── */}
         {/* 🟢 FIXED: Collapses to a readable single column on mobile, unfolds to 3 columns on tablet/desktop viewports */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 items-start mb-5 pb-12 md:pb-5 border-b border-[var(--border-muted)]">
