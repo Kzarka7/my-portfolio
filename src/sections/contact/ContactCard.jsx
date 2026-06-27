@@ -104,8 +104,11 @@ export default function ContactCard() {
       viewport={{ once: false, amount: 0.1 }}
       transition={{ duration: 0.8, ease: EASE }}
       className={`bg-[var(--surface)] p-6 md:p-10 border-[0.5px] relative will-change-transform transition-colors duration-300 ${
-        hov ? "border-[var(--border-67)]" : "border-[var(--border-2E)]"
+        hov ? "border-[var(--border-secondary)]" : "border-[var(--border-primary)]"
       }`}
+      style={{
+        boxShadow: "0 4px 16px var(--shadow-card)"
+      }}
     >
       <CornerBrackets color="var(--primary)" size="14" strokeWidth="1.2" />
 
@@ -144,9 +147,9 @@ export default function ContactCard() {
               onFocus={() => setFocused("name")}
               onBlur={() => setFocused(null)}
               placeholder="Your name"
-              style={{ fontFamily: "var(--font-mono)" }}
+              style={{ fontFamily: "var(--font-mono)", background: "var(--input-area)" }}
               className={`${baseInputClassName} ${
-                focused === "name" ? "border-[var(--border-67)]" : "border-[var(--border-2E)]"
+                focused === "name" ? "border-[var(--border-secondary)]" : "border-[var(--border-primary)]"
               }`}
               required
               autoComplete="off"
@@ -166,9 +169,9 @@ export default function ContactCard() {
               onFocus={() => setFocused("email")}
               onBlur={() => setFocused(null)}
               placeholder="you@email.com"
-              style={{ fontFamily: "var(--font-mono)" }}
+              style={{ fontFamily: "var(--font-mono)", background: "var(--input-area)" }}
               className={`${baseInputClassName} ${
-                focused === "email" ? "border-[var(--border-67)]" : "border-[var(--border-2E)]"
+                focused === "email" ? "border-[var(--border-secondary)]" : "border-[var(--border-primary)]"
               }`}
               required
               autoComplete="off"
@@ -194,15 +197,15 @@ export default function ContactCard() {
             required
             autoComplete="off"
             disabled={sending}
-            style={{ fontFamily: "var(--font-mono)" }}
+            style={{ fontFamily: "var(--font-mono)", background: "var(--input-area)" }}
             className={`${baseInputClassName} resize-none ${
-              focused === "message" ? "border-[var(--border-67)]" : "border-[var(--border-2E)]"
+              focused === "message" ? "border-[var(--border-secondary)]" : "border-[var(--border-primary)]"
             }`}
           />
 
           {/* Interactive Character Progress bar footer */}
           <div className="flex items-center justify-between mt-4">
-            <div className="flex-1 h-[1px] bg-[var(--border-2E)] mr-3 overflow-hidden relative">
+            <div className="flex-1 h-[1px] bg-[var(--border-primary)] mr-3 overflow-hidden relative">
               <motion.div
                 animate={{
                   scaleX: pct,

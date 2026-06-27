@@ -23,7 +23,7 @@ export default function FooterLinks({ item }) {
 
       {/* Interactive Tooltip Component Block */}
       <div
-        className={`absolute bottom-[140%] left-1/2 origin-bottom -translate-x-1/2 bg-[var(--text-dark)] border-[0.5px] border-[var(--disabled)] p-[5px_12px] whitespace-nowrap z-50 pointer-events-none transition-transform duration-200 ease-in-out ${
+        className={`absolute bottom-[140%] left-1/2 origin-bottom -translate-x-1/2 bg-[var(--text-inverted)] border-[0.5px] border-[var(--border-secondary)] p-[5px_12px] whitespace-nowrap z-50 pointer-events-none transition-transform duration-200 ease-in-out ${
           hov ? "scale-100" : "scale-0"
         }`}
       >
@@ -35,7 +35,7 @@ export default function FooterLinks({ item }) {
         </span>
         
         {/* Tooltip Downward Caret Arrow */}
-        <div className="absolute -bottom-[4px] left-1/2 -translate-x-1/2 rotate-45 w-1.5 h-1.5 bg-[var(--text-dark)] border-r-[0.5px] border-b-[0.5px] border-[var(--disabled)]" />
+        <div className="absolute -bottom-[4px] left-1/2 -translate-x-1/2 rotate-45 w-1.5 h-1.5 bg-[var(--text-inverted)] border-r-[0.5px] border-b-[0.5px] border-[var(--border-secondary)]" />
       </div>
     </div>
   );

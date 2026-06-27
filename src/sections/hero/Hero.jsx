@@ -46,7 +46,7 @@ export default function Hero() {
           <motion.div
             {...fade(0.1)}
             style={{ fontFamily: "var(--font-mono)" }}
-            className="text-[12px] text-[var(--primary-C2)] tracking-[0.16em] uppercase flex items-center justify-center lg:justify-start gap-[10px] mb-4"
+            className="text-[12px] text-[var(--text-colored)] tracking-[0.16em] uppercase flex items-center justify-center lg:justify-start gap-[10px] mb-4"
           >
             <span className="w-6 h-[0.5px] bg-[var(--primary)]" />
             {info.role}
@@ -74,7 +74,7 @@ export default function Hero() {
           <motion.p
             {...fade(0.32)}
             style={{ fontFamily: "var(--font-mono)" }}
-            className="text-[14px] text-[#cbcbcb] leading-[1.75] max-w-[600px] mb-8 font-light"
+            className="text-[14px] text-[var(--text-caption)] leading-[1.75] max-w-[600px] mb-8 font-light"
           >
             {info.bio}
           </motion.p>

@@ -11,73 +11,88 @@
 
 :root {
   /* ── 🌙 DARK MODE BASE VARIABLES ── */
-  --bg: #050507;
+  --bg: #050505;
+  --bg-alt: transparent;
 
-  --surface: #0d0d0d; /* background color of card, project, and contact container */
-  --surface-05: #050505; /* background color of the image in hero section */
-  --surface-blue-05: #4fc3f705; /* open to internship background color */
-  --surface-0D: #4fc3f70d; /* background hover in education icon */
+  --surface: #0e0e0e; /* background color of card, project, and contact container */
+  --surface-secondary: #4fc3f705; /* open to internship background color */
+  --surface-tertiary: #4fc3f70d; /* background hover in education icon and button */
+  --surface-active: #4fc3f71f; /* background color of the active container in navbar */
+  --surface-profile: #050505; /* background color of the image */
+  --surface-skew: #0c5f78;
 
-  --text: #fbfbfb; /* Main Text */
-  --text-gray: #d2d2d2; /* Caption */
-  --text-dark: #0e0e0e;
+  --text: #e8e8e8; /* Main Text */
+  --text-caption: #d2d2d2; /* Caption */
+  --text-inverted: #0e0e0e;
+  --text-colored: #4fc3f7c2;
+  --text-skew: #e8e8e8;
   --muted: #a7a7a7;
   --disabled: #4fc2f75d;
 
-  --primary: #4FC3F7; /* Primary color */
-  --primary-E2: #4fc3f7e2;
-  --primary-C2: #4fc3f7c2; /* Secondary Color */
+  --primary: #4fc3f7; /* Primary color */
+  --secondary: #4fc3f7e2;
 
-  --border-67: #4fc3f767; /* border color open, live, role, github btn, tags, status, download icon */
-  --border-2E: #4fc3f72e; /* border of project and contact container, color of slanted image in hero section */
-  --border-3D: #ffffff3d;
+  --border-primary: #4fc3f72e; /* border of project and contact container, color of slanted image in hero bg */
+  --border-secondary: #4fc3f767; /* border color open, live, role, github btn, tags, status, download icon */
+  --border-muted: #ffffff3d;
 
-  --primary-00: #4fc3f700; /* glowing effects of image in hero section */
-  --primary-99: #4fc3f799; /* glowing effects of dot in project section */
-  --primary-1F: #4fc3f71f; /* glowing effects of project and contact container */
-  --primary-59: #4fc3f759; /* glowing effects in the send message icon */
+  --shadow-profile: rgba(79, 195, 247, 0.18);
+  --shadow-colored: rgba(79, 195, 247, 0.35); /* glowing effects in the send message icon */
 
   --font-mono: "Martian Mono", monospace;
   --font-barl: "Barlow Condensed", sans-serif;
   --font-body: "Geist", sans-serif;
 
+  --input-area: #0d0d0d;
+
   /* Dynamic ambient glow targets to keep aurora working across themes */
-  --aurora-1: rgba(79, 195, 247, 0.08);
-  --aurora-2: rgba(79, 195, 247, 0.05);
+  --aurora-1: #4fc2f718;
+  --aurora-2: #4fc2f70f;
+  --dot-color: #4fc2f72f;
+
+  --webkit-track: #4fc2f71a;
+  --webkit-thumb: #4fc3f7a1;
 }
 
 /* ── ☀️ LIGHT MODE OVERRIDES ── */
 .light {
-  --bg: #f8fafc; /* Crisp, elegant slate-white */
+  --bg: #fafafa;
+  --bg-alt: #f4f4f7;
 
-  --surface: #ffffff; /* pure white cards */
-  --surface-05: #f1f5f9; /* cool gray image backing containers */
-  --surface-blue-05: rgba(0, 102, 135, 0.03); 
-  --surface-0D: rgba(0, 102, 135, 0.06); 
+  --surface: #ffffff;
+  --surface-secondary: #4f46e50a;
+  --surface-tertiary: #4f46e512;
+  --surface-active: #4f46e51f;
+  --surface-profile: #e0e7ff;
+  --surface-skew: #4f46e5; /* Vibrant solid indigo focal highlight */
 
-  --text: #0f172a; /* Deep charcoal slate for perfect typography reading contrast */
-  --text-gray: #475569; /* Balanced slate gray for captions */
-  --text-dark: #fbfbfb; /* Swapped to white for components that flip color states */
-  --muted: #94a3b8;
-  --disabled: rgba(0, 102, 135, 0.25);
+  --text: #111827;
+  --text-caption: #1a1b1d;
+  --text-inverted: #e8e8e8;
+  --text-colored: #4f46e5;
+  --text-skew: #e8e8e8;
+  --muted: #5c5d61;
+  --disabled: #4f46e590;
 
-  /* Deepened cyan brand color accent for optimal AA/AAA text legibility contrast metrics */
-  --primary: #006687; 
-  --primary-E2: rgba(0, 102, 135, 0.9);
-  --primary-C2: rgba(0, 102, 135, 0.75); 
+  --primary: #4f46e5;
+  --secondary: #4f46e5e6;
 
-  --border-67: rgba(0, 102, 135, 0.3); 
-  --border-2E: rgba(0, 102, 135, 0.12); 
-  --border-3D: rgba(15, 23, 42, 0.15);
+  --border-primary: #4f46e524;
+  --border-secondary: #4f46e55e;
+  --border-muted: #c4c7cc;
 
-  --primary-00: rgba(0, 102, 135, 0); 
-  --primary-99: rgba(0, 102, 135, 0.5); 
-  --primary-1F: rgba(0, 102, 135, 0.14); 
-  --primary-59: rgba(0, 102, 135, 0.35); 
+  --shadow-profile: rgba(79, 70, 229, 0.3);
+  --shadow-colored: rgba(78, 70, 229, 0.5);
+  --shadow-card: rgba(0, 0, 0, 0.15);
 
-  /* Tailored light-mode aurora colors to maintain depth */
-  --aurora-1: rgba(0, 102, 135, 0.05);
-  --aurora-2: rgba(0, 102, 135, 0.03);
+  --input-area: #f9fafb;
+
+  --aurora-1: transparent;
+  --aurora-2: transparent;
+  --dot-color: #4f46e50d;
+
+  --webkit-track: #4e46e590;
+  --webkit-thumb: #4f46e5;
 }
 
 html {
@@ -89,7 +104,9 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 body::before {
@@ -101,7 +118,7 @@ body::before {
 
   background-image: radial-gradient(
     circle,
-    var(--border-2E) 1px,
+    var(--dot-color) 1px,
     transparent 1px
   );
 
@@ -116,17 +133,17 @@ h3 {
 
 ::selection {
   background: var(--primary);
-  color: var(--text-dark);
+  color: var(--text-inverted);
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--surface-0D);
+  background: var(--webkit-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-67);
+  background: var(--webkit-thumb);
 }
 
 .grid-bg {
@@ -135,17 +152,9 @@ h3 {
 
   /* ── 🛠️ FIX: Using the brand variables here fixes the missing ambient glow issues ── */
   background:
-    radial-gradient(
-      circle at 20% 20%,
-      var(--aurora-1),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      var(--aurora-2),
-      transparent 30%
-    ),
-    radial-gradient(var(--primary-1F) 1px, transparent 1px);
+    radial-gradient(circle at 20% 20%, var(--aurora-1), transparent 35%),
+    radial-gradient(circle at 80% 80%, var(--aurora-2), transparent 30%),
+    radial-gradient(var(--dot-color) 1px, transparent 1px);
 
   background-size:
     auto,
@@ -157,16 +166,35 @@ h3 {
 }
 
 /* Ensure components transition smoothly when changing themes */
-*, *::before, *::after {
-  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+*,
+*::before,
+*::after {
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Override Framer motion/static spans layout text tags when animations are running */
-span, a, p, h1, h2, h3, button, svg {
-  transition: color 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+span,
+a,
+p,
+h1,
+h2,
+h3,
+button,
+svg {
+  transition:
+    color 0.3s ease,
+    fill 0.3s ease,
+    stroke 0.3s ease;
 }
 
 ::placeholder {
   color: var(--muted) !important;
   opacity: 1;
+}
+
+.bg-alt {
+  background: var(--bg-alt);
 }

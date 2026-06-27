@@ -35,6 +35,9 @@ export default function ProjectCard({ project, direction }) {
       viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="relative will-change-transform"
+      style={{
+        boxShadow: "0 4px 16px var(--shadow-card)",
+      }}
     >
       {/* ── 🎯 FIX: Added clipping viewport wrapper directly around AnimatePresence ── */}
       <div className="w-full overflow-hidden relative">
@@ -50,15 +53,16 @@ export default function ProjectCard({ project, direction }) {
             exit="exit"
             style={{
               border: hov
-                ? "0.5px solid var(--border-67)"
-                : "0.5px solid var(--border-2E)",
+                ? "0.5px solid var(--border-secondary)"
+                : "0.5px solid var(--border-primary)",
             }}
             className="bg-[var(--surface)] relative overflow-hidden transition-colors duration-300 ease-in-out"
           >
-            {/* Top accent line */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-[var(--primary-C2)] z-10" />
-
-            <CornerBrackets color="var(--primary)" size="14" strokeWidth="1.2" />
+            <CornerBrackets
+              color="var(--primary)"
+              size="14"
+              strokeWidth="1.2"
+            />
 
             {/* ── IMAGE SECTION — Fluid Responsive Heights ── */}
             <div className="w-full h-[260px] sm:h-[340px] md:h-[400px] relative p-6 sm:p-8 overflow-hidden">
@@ -81,20 +85,19 @@ export default function ProjectCard({ project, direction }) {
               {/* Status badge */}
               <div
                 style={{ backdropFilter: "blur(6px)" }}
-                className="absolute top-10 right-9 sm:top-12 sm:right-12 text-[9px] text-[var(--primary)] border-[0.5px] border-[var(--border-67)] bg-[var(--surface-blue-05)] py-1 px-3 tracking-widest font-mono z-20 pointer-events-none"
+                className="absolute top-10 right-9 sm:top-12 sm:right-12 text-[9px] text-[var(--primary)] border-[0.5px] border-[var(--border-secondary)] bg-[var(--surface-secondary)] py-1 px-3 tracking-widest font-mono z-20 pointer-events-none"
               >
                 {project.status}
               </div>
 
               {/* ID + year */}
-              <div className="absolute top-11 left-9 sm:top-12 sm:left-12 text-[10px] text-[var(--primary-C2)] tracking-widest font-mono z-20 pointer-events-none">
+              <div className="absolute top-11 left-9 sm:top-12 sm:left-12 text-[10px] text-[var(--text-colored)] tracking-widest font-mono z-20 pointer-events-none">
                 — {project.id} · {project.year}
               </div>
             </div>
 
             {/* ── CARD BODY CONTENT ── */}
-            <div className="p-6 sm:p-8 border-t-[0.5px] border-[var(--border-2E)]">
-              
+            <div className="p-6 sm:p-8 border-t-[0.5px] border-[var(--border-primary)]">
               {/* Title, Roles & Primary Action Target Split Block */}
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 mb-4">
                 <div>
@@ -111,7 +114,7 @@ export default function ProjectCard({ project, direction }) {
                       <span
                         key={role}
                         style={{ fontFamily: "var(--font-barl)" }}
-                        className="text-[14px] sm:text-[16px] text-[var(--primary)] border-[0.5px] border-[var(--border-67)] py-1 px-3 tracking-wider bg-[var(--surface-blue-05)] uppercase"
+                        className="text-[14px] sm:text-[16px] text-[var(--primary)] border-[0.5px] border-[var(--border-secondary)] py-1 px-3 tracking-wider bg-[var(--surface-secondary)] uppercase"
                       >
                         {role}
                       </span>
@@ -129,10 +132,14 @@ export default function ProjectCard({ project, direction }) {
                     onMouseLeave={() => setGithubHov(false)}
                     style={{
                       fontFamily: "var(--font-mono)",
-                      color: githubHov ? "var(--primary)" : "var(--text-gray)",
-                      borderColor: githubHov ? "var(--border-67)" : "var(--border-3D)",
+                      color: githubHov
+                        ? "var(--primary)"
+                        : "var(--text-caption)",
+                      borderColor: githubHov
+                        ? "var(--border-secondary)"
+                        : "var(--border-muted)",
                     }}
-                    className="text-[12px] no-underline tracking-wider uppercase py-2 px-3.5 bg-[var(--surface-blue-05)] border-[0.5px] transition-colors duration-200 ease-out text-center flex-1 md:flex-none"
+                    className="text-[12px] no-underline tracking-wider uppercase py-2 px-3.5 bg-[var(--surface-secondary)] border-[0.5px] transition-colors duration-200 ease-out text-center flex-1 md:flex-none"
                   >
                     GitHub ↗
                   </a>
@@ -144,9 +151,11 @@ export default function ProjectCard({ project, direction }) {
                     onMouseLeave={() => setLiveHov(false)}
                     style={{
                       fontFamily: "var(--font-mono)",
-                      backgroundColor: liveHov ? "var(--primary)" : "var(--primary-C2)",
+                      backgroundColor: liveHov
+                        ? "var(--primary)"
+                        : "var(--secondary)",
                     }}
-                    className="text-[12px] font-bold no-underline tracking-wider uppercase py-2 px-3.5 text-[var(--text-dark)] transition-colors duration-250 ease-out text-center flex-1 md:flex-none"
+                    className="text-[12px] font-bold no-underline tracking-wider uppercase py-2 px-3.5 text-[var(--text-inverted)] transition-colors duration-250 ease-out text-center flex-1 md:flex-none"
                   >
                     Live ↗
                   </a>
@@ -154,12 +163,12 @@ export default function ProjectCard({ project, direction }) {
               </div>
 
               {/* Divider Line */}
-              <div className="h-[0.5px] bg-[var(--border-2E)] mb-4" />
+              <div className="h-[0.5px] bg-[var(--border-primary)] mb-4" />
 
               {/* Long Form Summary Text Description */}
               <p
                 style={{ fontFamily: "var(--font-body)" }}
-                className="text-[15px] sm:text-[16px] text-[var(--text-gray)] leading-relaxed font-light mb-5"
+                className="text-[15px] sm:text-[16px] text-[var(--text-caption)] leading-relaxed font-light mb-5"
               >
                 {project.desc}
               </p>
@@ -170,7 +179,7 @@ export default function ProjectCard({ project, direction }) {
                   <span
                     key={tag}
                     style={{ fontFamily: "var(--font-mono)" }}
-                    className="text-[11px] sm:text-[12px] text-[var(--primary-C2)] border-[0.5px] border-[var(--border-67)] py-1 px-2.5 tracking-wide bg-[var(--surface-blue-05)]"
+                    className="text-[11px] sm:text-[12px] text-[var(--text-colored)] border-[0.5px] border-[var(--border-secondary)] py-1 px-2.5 tracking-wide bg-[var(--surface-secondary)]"
                   >
                     {tag}
                   </span>

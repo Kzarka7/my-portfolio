@@ -12,7 +12,6 @@ export const educationData = [
         institution: "Cebu Technological University — Danao Campus",
         desc: "Pursuing a Bachelor of Science in Computer Engineering with a focus on software development and embedded systems.",
         icon: FaGraduationCap,
-        color: "var(--primary)",
         status: "ONGOING",
       },
       {
@@ -23,7 +22,6 @@ export const educationData = [
         institution: "COMPOSTELA NATIONAL HIGH SCHOOL",
         desc: "General Academic Strand. Graduated with honors.",
         icon: FaSchool,
-        color: "var(--primary)",
         status: "COMPLETED",
       },
     ],
@@ -38,7 +36,6 @@ export const educationData = [
         title: "Responsive Web Design",
         institution: "freeCodeCamp",
         icon: FaAward,
-        color: "var(--primary)",
         status: "VERIFIED",
       },
       {
@@ -48,7 +45,6 @@ export const educationData = [
         title: "Your Certificate Here",
         institution: "Issuing Organization",
         icon: FaAward,
-        color: "var(--primary)",
         status: "ONGOING",
       },
       {
@@ -58,7 +54,6 @@ export const educationData = [
         title: "Your Certificate Here",
         institution: "Issuing Organization",
         icon: FaAward,
-        color: "var(--primary)",
         status: "VERIFIED",
       },
     ],

@@ -20,9 +20,9 @@ export default function SectionHeader({
       <div className="flex-1 min-w-[250px]">
         <div
           style={{ fontFamily: "var(--font-mono)" }}
-          className="text-[12px] font-medium text-[var(--primary-C2)] tracking-[0.16em] uppercase flex items-center justify-center md:justify-start gap-2.5 mb-2"
+          className="text-[12px] font-medium text-[var(--text-colored)] tracking-[0.16em] uppercase flex items-center justify-center md:justify-start gap-2.5 mb-2"
         >
-          <span className="w-5 h-[0.5px] bg-[var(--primary-C2)] block" />
+          <span className="w-5 h-[0.5px] bg-[var(--text-colored)] block" />
           [ {number} ] — {label}
         </div>
 

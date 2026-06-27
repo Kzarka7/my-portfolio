@@ -30,47 +30,47 @@ export default function Button({
 
   // ── 1. Variant Style Map ──
   const variantClasses = {
-    solid: `w-full sm:w-auto justify-center px-6 py-4 text-[14px] border-2 border-[var(--primary-E2)] transition-all duration-[800ms] ${
-      hov ? "text-[var(--text)] scale-105 shadow-[4px_5px_16px_2px_var(--primary-59)]" : "text-[var(--text-dark)] scale-100 shadow-none"
+    solid: `w-full sm:w-auto justify-center px-6 py-4 text-[14px] border-2 border-[var(--secondary)] transition-all duration-[800ms] ${
+      hov ? "text-[var(--text-skew)] scale-105 shadow-[0px_0px_16px_2px_var(--shadow-colored)]" : "text-[var(--text-inverted)] scale-100 shadow-none"
     }`,
-    ghost: `w-full sm:w-auto justify-center px-6 py-4 text-[14px] bg-[var(--surface-0D)] border-2 border-[var(--primary-E2)] transition-all duration-[800ms] ${
-      hov ? "text-[var(--text-dark)] scale-105 shadow-[4px_5px_16px_2px_var(--primary-59)]" : "text-[var(--primary-E2)] scale-100 shadow-none"
+    ghost: `w-full sm:w-auto justify-center px-6 py-4 text-[14px] bg-[var(--surface-tertiary)] border-2 border-[var(--secondary)] transition-all duration-[800ms] ${
+      hov ? "text-[var(--text-inverted)] scale-105 shadow-[0px_0px_16px_2px_var(--shadow-colored)]" : "text-[var(--secondary)] scale-100 shadow-none"
     }`,
     // 🟢 UPDATED: Changed justify-between to justify-center and swapped px-6 for balanced custom spacing limits
-    "pill-resume": "w-full sm:w-auto sm:min-w-[210px] justify-center py-4 text-[14px] h-full bg-[var(--surface-0D)] text-[var(--primary-E2)] border-2 border-[var(--primary-E2)] pl-[12px] pr-3 sm:pl-6 sm:pr-6",
+    "pill-resume": "w-full sm:w-auto sm:min-w-[210px] justify-center py-4 text-[14px] h-full bg-[var(--surface-tertiary)] text-[var(--secondary)] border-2 border-[var(--secondary)] pl-[12px] pr-3 sm:pl-6 sm:pr-6",
     "pill-send": `w-full sm:w-auto sm:min-w-[180px] justify-center py-6 text-[12px] h-[46px] pl-[8px] pr-2 sm:pl-4 sm:pr-4 ${
       sent 
-        ? "bg-[var(--surface-0D)] text-[var(--primary-E2)] border-[0.5px] border-[var(--primary-E2)]" 
-        : "bg-[var(--primary-E2)] text-[var(--text-dark)] border-none"
+        ? "bg-[var(--surface-tertiary)] text-[var(--secondary)] border-[0.5px] border-[var(--secondary)]" 
+        : "bg-[var(--secondary)] text-[var(--text-inverted)] border-none"
     }`,
   };
 
   // ── 2. Pill Expand Box Style Mapping ──
   const pillBoxClasses = isPillResume
-    ? `absolute right-[7px] h-[35px] border-[1.5px] border-[var(--border-67)] flex items-center justify-center shrink-0 z-10 transition-all duration-500 ease-in-out ${
-        hov ? "bg-[var(--primary)] w-[calc(100%-14px)] shadow-[0_0_8px_2px_var(--primary-59)]" : "bg-[var(--text-dark)] w-[35px] shadow-none"
+    ? `absolute right-[7px] h-[35px] border-[1.5px] border-[var(--border-secondary)] flex items-center justify-center shrink-0 z-10 transition-all duration-500 ease-in-out ${
+        hov ? "bg-[var(--primary)] w-[calc(100%-14px)] shadow-[0_0_8px_2px_var(--shadow-colored)]" : "bg-[var(--text-inverted)] w-[35px] shadow-none"
       }`
     : `absolute right-[7px] h-[35px] flex items-center justify-center shrink-0 z-10 transition-all duration-500 ease-in-out ${
         sent
           ? "bg-[var(--primary)] w-[35px] shadow-[0_0_8px_2px_var(--primary)]"
           : hov
-            ? "bg-[var(--text-dark)] w-[calc(100%-14px)] shadow-[0_0_4px_2px_var(--surface-05)]"
-            : "bg-[var(--text-dark)] w-[35px] shadow-none"
+            ? "bg-[var(--text-inverted)] w-[calc(100%-14px)] shadow-[0_0_4px_2px_var(--surface)]"
+            : "bg-[var(--text-inverted)] w-[35px] shadow-none"
       }`;
 
   const PillIcon = () => {
     if (isPillSend) {
       return sent ? (
-        <FiCheck size={18} className="text-[var(--text-dark)] shrink-0" />
+        <FiCheck size={18} className="text-[var(--text-inverted)] shrink-0" />
       ) : (
-        <MdSend size={16} className="text-[var(--primary-E2)] shrink-0" />
+        <MdSend size={16} className="text-[var(--secondary)] shrink-0" />
       );
     }
     return (
       <FiDownload
         size={18}
         className={`shrink-0 transition-colors duration-200 ${
-          hov ? "text-[var(--text-dark)]" : "text-[var(--primary-E2)]"
+          hov ? "text-[var(--text-inverted)]" : "text-[var(--secondary)]"
         }`}
       />
     );
@@ -87,7 +87,7 @@ export default function Button({
         <>
           {/* Base Background Color for Solid state before hover */}
           {variant === "solid" && (
-            <span className="absolute inset-0 bg-[var(--primary-E2)] z-0 pointer-events-none" />
+            <span className="absolute inset-0 bg-[var(--secondary)] z-0 pointer-events-none" />
           )}
           
           {/* Slanted Wipe Pane */}
@@ -96,7 +96,7 @@ export default function Button({
             animate={{ left: hov ? "-15%" : "-150%" }}
             transition={{ duration: 1, ease: [0.3, 1, 0.3, 1] }}
             style={{
-              backgroundColor: variant === "solid" ? "#0c5f78" : "var(--primary-E2)",
+              backgroundColor: variant === "solid" ? "var(--surface-skew)" : "var(--secondary)",
             }}
             className="absolute top-0 h-full w-[140%] -skew-x-[35deg] z-0 pointer-events-none"
           />

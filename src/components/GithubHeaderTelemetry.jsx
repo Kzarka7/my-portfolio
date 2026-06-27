@@ -68,7 +68,7 @@ export default function GithubHeaderTelemetry() {
 return (
   <div
     style={{ fontFamily: "var(--font-mono, monospace)" }}
-    className="text-[11px] text-[var(--disabled)] tracking-wider flex items-center flex-wrap justify-center md:justify-end gap-3 max-w-[500px] leading-relaxed uppercase"
+    className="text-[11px] text-[var(--text-colored)] tracking-wider flex items-center flex-wrap justify-center md:justify-end gap-3 max-w-[500px] leading-relaxed uppercase"
   >
     {/* Loading State String / Identifier */}
     <span className="text-[var(--primary,#00f0ff)] font-semibold animate-pulse">
@@ -78,31 +78,31 @@ return (
     {/* Repos Block */}
     <span className="whitespace-nowrap">
       REPOS[{" "}
-      <strong className="text-white tabular-nums font-bold">
+      <strong className="text-[var(--text)] tabular-nums font-bold">
         {stats.repos}
       </strong>{" "}
       ]
     </span>
 
     {/* Separator Pipe 1 */}
-    <span className="text-[var(--border-2E,#222)] hidden sm:inline">❘</span>
+    <span className="text-[var(--text-colored)] hidden sm:inline">❘</span>
 
     {/* Commits Block */}
     <span className="whitespace-nowrap">
       COMMITS[{" "}
-      <strong className="text-white tabular-nums font-bold">
+      <strong className="text-[var(--text)] tabular-nums font-bold">
         {stats.commits}
       </strong>{" "}
       ]
     </span>
 
     {/* Separator Pipe 2 */}
-    <span className="text-[var(--border-2E,#222)] hidden sm:inline">❘</span>
+    <span className="text-[var(--text-colored)] hidden sm:inline">❘</span>
 
     {/* Combined Total Contributions Grid Units Block */}
     <span className="whitespace-nowrap">
       CONTRIBS[{" "}
-      <strong className="text-[var(--primary,#00f0ff)] tabular-nums font-bold">
+      <strong className="text-[var(--text)] tabular-nums font-bold">
         {stats.contribs}
       </strong>{" "}
       ]

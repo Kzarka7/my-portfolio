@@ -92,8 +92,8 @@ export default function TiltedCard({
             width: imageWidth,
             height: imageHeight,
           }}
-          className={`absolute top-0 left-0 object-cover rounded-none [transform:translateZ(0)] will-change-transform border solid border-[var(--primary-C2)] transition-shadow duration-500 ease-in-out ${
-            hov ? "shadow-[0_0_16px_2px_var(--primary-59)]" : "shadow-none"
+          className={`absolute top-0 left-0 object-cover rounded-none [transform:translateZ(0)] will-change-transform border solid border-[var(--primary)] transition-shadow duration-500 ease-in-out ${
+            hov ? "shadow-[0_0_16px_2px_var(--shadow-colored)]" : "shadow-none"
           }`}
         />
 
@@ -116,7 +116,7 @@ export default function TiltedCard({
             opacity,
             rotate: rotateFigcaption,
           }}
-          className="pointer-events-none absolute left-0 top-0 rounded-[2px] bg-[var(--surface)] border-[0.5px] border-[var(--border-67)] text-[var(--primary)] text-[10px] tracking-[0.1em] uppercase p-[4px_10px] z-10 will-change-[transform,opacity]"
+          className="pointer-events-none absolute left-0 top-0 rounded-[2px] bg-[var(--surface)] border-[0.5px] border-[var(--border-secondary)] text-[var(--primary)] text-[10px] tracking-[0.1em] uppercase p-[4px_10px] z-10 will-change-[transform,opacity]"
         >
           {captionText}
         </motion.figcaption>

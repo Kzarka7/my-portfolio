@@ -9,7 +9,7 @@ export default function Availability({ className = "", style = {} }) {
       style={{
         ...style
       }}
-      className={`absolute flex items-center gap-[7px] bg-[var(--surface-blue-05)] border-[0.5px] border-[var(--border-67)] p-[6px_12px] backdrop-blur-[8px] ${className}`}
+      className={`absolute flex items-center gap-[7px] bg-[var(--surface-secondary)] border-[0.5px] border-[var(--border-secondary)] p-[6px_12px] backdrop-blur-[8px] ${className}`}
     >
       {/* 🔮 Pulsing Radar Status Dot Indicator */}
       <motion.span

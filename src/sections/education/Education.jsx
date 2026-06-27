@@ -9,7 +9,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="min-h-screen flex items-center relative z-10"
+      className="min-h-screen flex items-center relative z-10 bg-alt"
     >
       <div className="py-20 px-4 md:px-6 lg:px-0 max-w-[1200px] w-full mx-auto">
         {/* Section Header */}
@@ -17,7 +17,7 @@ export default function Education() {
 
         {/* ── Two Column Responsive Grid Layout ── */}
         {/* 🟢 FIXED: Collapses to 1 column on mobile and expands to 2 columns on tablet/desktop viewports */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-[100px] items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-[50px] items-start">
           {educationData.map((cat) => (
             <motion.div
               key={cat.category}
@@ -32,20 +32,22 @@ export default function Education() {
               {/* Category Sub-Header Line Tracker */}
               <div
                 style={{ fontFamily: "var(--font-mono)" }}
-                className="text-[12px] text-[var(--text-gray)] tracking-[0.18em] uppercase mb-1 flex items-center gap-3"
+                className="text-[12px] text-[var(--text-caption)] tracking-[0.18em] uppercase mb-4 flex items-center gap-3"
               >
                 {cat.category}
                 <span className="flex-1 h-[0.5px] bg-[var(--muted)] block" />
               </div>
 
               {/* Education Cards Mapping Block */}
-              {cat.items.map((education, index) => (
-                <EducationCard
-                  key={education.id}
-                  education={education}
-                  index={index}
-                />
-              ))}
+              <div className="flex flex-col gap-5">
+                {cat.items.map((education, index) => (
+                  <EducationCard
+                    key={education.id}
+                    education={education}
+                    index={index}
+                  />
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

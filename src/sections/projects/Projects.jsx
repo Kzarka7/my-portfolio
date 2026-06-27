@@ -62,7 +62,7 @@ export default function Projects() {
                 onClick={() => goTo(i)}
                 style={{
                   width: i === current ? "32px" : "10px",
-                  boxShadow: i === current ? "0 0 8px var(--primary-99)" : "none",
+                  boxShadow: i === current ? "0 0 16px 4px var(--shadow-colored)" : "none",
                 }}
                 className={`h-2.5 rounded-full p-0 cursor-pointer border-none transition-all duration-350 ease-out shrink-0 ${
                   i === current ? "bg-[var(--primary)]" : "bg-[var(--disabled)]"
@@ -74,7 +74,7 @@ export default function Projects() {
           {/* Slider Numerical Counter */}
           <div
             style={{ fontFamily: "var(--font-mono)" }}
-            className="text-[12px] text-[var(--primary-C2)] tracking-wider order-2 sm:mx-auto"
+            className="text-[12px] text-[var(--text-colored)] tracking-wider order-2 sm:mx-auto"
           >
             {String(current + 1).padStart(2, "0")} /{" "}
             {String(projectsData.length).padStart(2, "0")}

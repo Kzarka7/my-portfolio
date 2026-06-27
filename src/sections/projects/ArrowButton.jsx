@@ -15,7 +15,7 @@ export default function ArrowButton({ direction, onClick, disabled }) {
           ? "var(--disabled)"
           : hov
             ? "var(--primary)"
-            : "var(--primary-C2)",
+            : "var(--secondary)",
       }}
       className={`w-[46px] h-[46px] border-[0.5px] bg-transparent flex items-center justify-center relative overflow-hidden shrink-0 transition-all duration-200 ease-in-out ${
         disabled ? "cursor-not-allowed" : "cursor-pointer"
@@ -27,7 +27,7 @@ export default function ArrowButton({ direction, onClick, disabled }) {
           transform: hov && !disabled ? "scaleX(1)" : "scaleX(0)",
           transformOrigin: direction === "left" ? "right" : "left",
         }}
-        className="absolute inset-0 bg-[var(--surface-blue-05)] transition-transform duration-200 ease-in-out"
+        className="absolute inset-0 bg-[var(--border-primary)] transition-transform duration-200 ease-in-out"
       />
 
       {/* Navigation Arrow SVG */}
@@ -41,7 +41,7 @@ export default function ArrowButton({ direction, onClick, disabled }) {
             ? "var(--disabled)"
             : hov
               ? "var(--primary)"
-              : "var(--primary-C2)"
+              : "var(--primary)"
         }
         strokeWidth="2"
         strokeLinecap="round"
