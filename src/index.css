@@ -14,7 +14,7 @@
   --bg: #050505;
   --bg-alt: transparent;
 
-  --surface: #0f0f0f; /* background color of card, project, and contact container */
+  --surface: #0e0e0e; /* background color of card, project, and contact container */
   --surface-secondary: #4fc3f705; /* open to internship background color */
   --surface-tertiary: #4fc3f70d; /* background hover in education icon and button */
   --surface-active: #4fc3f71f; /* background color of the active container in navbar */
@@ -43,7 +43,7 @@
   --font-barl: "Barlow Condensed", sans-serif;
   --font-body: "Geist", sans-serif;
 
-  --input-area: transparent;
+  --input-area: #0d0d0d;
 
   /* Dynamic ambient glow targets to keep aurora working across themes */
   --aurora-1: #4fc2f718;
