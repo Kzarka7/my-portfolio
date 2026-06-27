@@ -18,7 +18,7 @@ export default function Footer() {
   const lineClassName = "flex-1 h-[0.5px] bg-[var(--border-muted)] block";
 
   return (
-    <footer className="relative z-10 border-t border-[var(--border-muted)] bg-[var(--surface-secondary)] backdrop-blur-[50px]">
+    <footer className="relative z-10 border-t border-[var(--border-muted)] bg-[var(--bg-alt)] backdrop-blur-[50px]">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-0 py-5 pb-7">
         {/* ── 3-COLUMN GRID ── */}
         {/* 🟢 FIXED: Collapses to a readable single column on mobile, unfolds to 3 columns on tablet/desktop viewports */}

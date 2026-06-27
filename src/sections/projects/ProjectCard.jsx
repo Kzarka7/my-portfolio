@@ -35,6 +35,9 @@ export default function ProjectCard({ project, direction }) {
       viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="relative will-change-transform"
+      style={{
+        boxShadow: "0 4px 16px var(--shadow-card)"
+      }}
     >
       {/* ── 🎯 FIX: Added clipping viewport wrapper directly around AnimatePresence ── */}
       <div className="w-full overflow-hidden relative">

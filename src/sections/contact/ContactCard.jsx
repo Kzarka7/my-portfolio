@@ -106,6 +106,9 @@ export default function ContactCard() {
       className={`bg-[var(--surface)] p-6 md:p-10 border-[0.5px] relative will-change-transform transition-colors duration-300 ${
         hov ? "border-[var(--border-secondary)]" : "border-[var(--border-primary)]"
       }`}
+      style={{
+        boxShadow: "0 4px 16px var(--shadow-card)"
+      }}
     >
       <CornerBrackets color="var(--primary)" size="14" strokeWidth="1.2" />
 

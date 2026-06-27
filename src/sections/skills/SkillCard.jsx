@@ -31,6 +31,7 @@ export default function SkillCard({ skill, index }) {
           ? `0.5px solid ${skill.color}55`
           : "0.5px solid var(--border-primary)",
         background: isHighlighted ? `${skill.color}08` : "var(--surface)",
+        boxShadow: "0 4px 8px var(--shadow-card)"
       }}
       className="relative flex flex-col gap-3.5 p-6 transition-all duration-250 ease-out"
     >

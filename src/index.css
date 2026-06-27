@@ -34,8 +34,13 @@
   --border-secondary: #4fc3f767; /* border color open, live, role, github btn, tags, status, download icon */
   --border-muted: #ffffff3d;
 
-  --shadow-profile: #4fc3f72e;
-  --shadow-colored: #4fc3f759; /* glowing effects in the send message icon */
+  --shadow-profile: rgba(79, 195, 247, 0.18);
+  --shadow-colored: rgba(
+    79,
+    195,
+    247,
+    0.349
+  ); /* glowing effects in the send message icon */
 
   --font-mono: "Martian Mono", monospace;
   --font-barl: "Barlow Condensed", sans-serif;
@@ -46,20 +51,23 @@
   --aurora-2: #4fc2f70f;
 
   --dot-color: #4fc2f72f;
+
+  --webkit-track: #4fc2f71a;
+  --webkit-thumb: #4fc3f7a1;
 }
 
 /* ── ☀️ LIGHT MODE OVERRIDES ── */
 .light {
   --bg: #f8fafc; /* Crisp, elegant slate-white */
-  --bg-alt: #f1f2f3;
+  --bg-alt: #f4f4f4;
 
   --surface: #ffffff; /* pure white cards */
   --surface-secondary: #00668708;
   --surface-tertiary: #0066870f;
-  --surface-profile: #f1f5f9; /* cool gray image backing containers */
   --surface-active: #00668724;
+  --surface-profile: #05050510; /* cool gray image backing containers */
 
-  --text: #0f172a; /* Deep charcoal slate for perfect typography reading contrast */
+  --text: #212121; /* Deep charcoal slate for perfect typography reading contrast */
   --text-caption: #475569; /* Balanced slate gray for captions */
   --text-inverted: #fbfbfb; /* Swapped to white for components that flip color states */
   --text-colored: #4fc3f7c2;
@@ -74,14 +82,18 @@
   --border-secondary: #0066874d;
   --border-muted: #0f172a26;
 
-  --shadow-profile: #00668700;
-  --shadow-colored: #00668759;
+  --shadow-profile: rgba(0, 0, 0, 0.15);
+  --shadow-colored: rgba(0, 102, 135, 0.349);
+  --shadow-card: rgba(0, 0, 0, 0.15);
 
   /* Tailored light-mode aurora colors to maintain depth */
   --aurora-1: transparent;
   --aurora-2: transparent;
 
-  --dot-color: #4fc3f72e;
+  --dot-color: transparent;
+
+  --webkit-track: #0c181f;
+  --webkit-thumb: #3784a7;
 }
 
 html {
@@ -129,10 +141,10 @@ h3 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #4fc2f71a;
+  background: var(--webkit-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #4fc3f7a1;
+  background: var(--webkit-thumb);
 }
 
 .grid-bg {

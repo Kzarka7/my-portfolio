@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import profileImage1 from "../../assets/profile-image.png";
+import profileImage2 from "../../assets/profile-image-light.jpg"
 import CornerBrackets from "../../components/CornerBrackets";
 import Availability from "../../components/Availability";
 import GlareHover from "../../components/GlareHover";
@@ -9,7 +10,27 @@ import GlareHover from "../../components/GlareHover";
 export default function ProfileImage() {
   const heroRef = useRef(null);
 
-  const isInView = useInView(heroRef, { once: false, amount: 0.2 });
+  const [isLight, setIsLight] = useState(
+    document.documentElement.classList.contains("light"),
+  );
+
+  const isInView = useInView(heroRef, {
+    once: false,
+    amount: 0.2,
+  });
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsLight(document.documentElement.classList.contains("light"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.div
@@ -21,14 +42,30 @@ export default function ProfileImage() {
     >
       {/* Pulsing glow ring */}
       <motion.div
-        animate={{
-          boxShadow: [
-            "0 0 0px 0px var(--shadow-profile)",
-            "0 0 36px 4px var(--shadow-profile)",
-            "0 0 0px 0px var(--shadow-profile)",
-          ],
-        }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+        animate={
+          isLight
+            ? {
+                boxShadow: "0 4px 8px var(--shadow-profile)",
+              }
+            : {
+                boxShadow: [
+                  "0 0 0px 0px var(--shadow-profile)",
+                  "0 0 36px 4px var(--shadow-profile)",
+                  "0 0 0px 0px var(--shadow-profile)",
+                ],
+              }
+        }
+        transition={
+          isLight
+            ? {
+                duration: 0,
+              }
+            : {
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }
+        }
         className="absolute inset-[-10px] border-[0.5px] border-[var(--border-primary)]"
       />
 
@@ -50,41 +87,21 @@ export default function ProfileImage() {
         <img
           src={profileImage1}
           alt="John Benedict Gala - Computer Engineering Student"
-          className="w-full h-full object-cover block brightness-[0.85] contrast-[1.1] scale-[0.8]"
+          className="w-full h-full object-cover block brightness-[0.85] contrast-[1.1] "
         />
 
         {/* Bottom gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-to-t from-black from-0% to-transparent to-70% pointer-events-none" />
-
-        {/* Name tag */}
-        <div className="absolute bottom-[16px] left-[16px] right-[16px]">
-          <div
-            className="text-[8px] text-[var(--disabled)] tracking-[0.14em] mb-[3px]"
-            style={{
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            // PROFILE_IMG
-          </div>
-          <div
-            className="text-[14px] text-[var(--text)] tracking-[0.14em]"
-            style={{
-              fontFamily: "var(--font-barl)",
-            }}
-          >
-            JOHN BENEDICT M. GALA
-          </div>
-        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#00000067] from-0% to-transparent to-70% pointer-events-none" />
 
         {/* Scan line — opacity + translateY, GPU-composited */}
         <motion.div
-          initial={{ y: -5 }} 
-          animate={{ y: [-5, 370, -5] }} 
+          initial={{ y: -5 }}
+          animate={{ y: [-5, 370, -5] }}
           transition={{
-            duration: 7.0, 
+            duration: 7.0,
             repeat: Infinity,
-            ease: "linear", 
-            repeatDelay: 2.5, 
+            ease: "linear",
+            repeatDelay: 2.5,
           }}
           className="absolute top-0 left-0 right-0 h-px pointer-events-none will-change-transform"
           style={{

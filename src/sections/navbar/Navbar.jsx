@@ -44,7 +44,7 @@ export default function Navbar() {
           scrolled ? "bg-[#ffffff08]" : "bg-[#ffffff06]"
         }`}
         style={{
-          boxShadow: "0 4px 16px rgba(27, 27, 27, 0.15)"
+          boxShadow: "0 4px 8px var(--shadow-card)"
         }}
       >
         <a
