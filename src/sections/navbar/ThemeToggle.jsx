@@ -3,16 +3,27 @@ import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
+  // ── ☀️/🌙 INITIALIZE STATE FROM LOCALSTORAGE ──
+  const [isDark, setIsDark] = useState(() => {
+    // If running in an SSR environment (like Next.js), default to true safely
+    if (typeof window === "undefined") return true;
+    
+    const savedTheme = localStorage.getItem("theme");
+    // Default to dark theme (true) unless explicitly saved as "light"
+    return savedTheme !== "light";
+  });
+  
   const [themeHover, setThemeHover] = useState(false);
 
-  // ── ☀️/🌙 THEME STATE DETECTOR ──
+  // ── ☀️/🌙 THEME STATE DETECTOR & PERSISTENCE ──
   useEffect(() => {
     const root = document.documentElement;
     if (isDark) {
       root.classList.remove("light");
+      localStorage.setItem("theme", "dark");
     } else {
       root.classList.add("light");
+      localStorage.setItem("theme", "light");
     }
   }, [isDark]);
 
